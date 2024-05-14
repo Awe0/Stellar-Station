@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://snk0p1unhn2g"]
+
+[ext_resource type="Script" path="res://Scripts/rock.gd" id="1_2u6xu"]
+[ext_resource type="Texture2D" uid="uid://dv3nful3du6d2" path="res://Assets/Sprites/TESTrock1.png" id="1_82c1e"]
+[ext_resource type="Texture2D" uid="uid://3d0qmeakgkx3" path="res://Assets/Sprites/TESTrock2.png" id="2_6a0g8"]
+[ext_resource type="Texture2D" uid="uid://38alltkxoqum" path="res://Assets/Sprites/TESTrock3.png" id="3_5ed7c"]
+[ext_resource type="Texture2D" uid="uid://mv3mdeqk7u38" path="res://Assets/Sprites/TESTrock4.png" id="4_wrj05"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5kso"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_82c1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6a0g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5ed7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wrj05")
+}],
+"loop": false,
+"name": &"CollactableRock",
+"speed": 0.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvxd0"]
+radius = 27.2947
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0fxc"]
+size = Vector2(27, 11)
+
+[node name="Rock" type="Node2D" groups=["Ores"]]
+visibility_layer = 2
+script = ExtResource("1_2u6xu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_u5kso")
+animation = &"CollactableRock"
+offset = Vector2(0, -9)
+
+[node name="CollactableZone" type="Area2D" parent="AnimatedSprite2D"]
+visibility_layer = 2
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/CollactableZone"]
+visibility_layer = 2
+shape = SubResource("CircleShape2D_qvxd0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visibility_layer = 2
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visibility_layer = 2
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_g0fxc")
+
+[node name="RespawnTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="AnimatedSprite2D/CollactableZone" to="." method="_on_collactable_zone_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/CollactableZone" to="." method="_on_collactable_zone_body_exited"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_timer_timeout"]
