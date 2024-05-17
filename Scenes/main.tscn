@@ -35,7 +35,7 @@ position = Vector2(373, 233)
 [node name="Rocks" type="Node" parent="."]
 
 [node name="Rock" parent="Rocks" instance=ExtResource("4_kgiw0")]
-position = Vector2(461, 231)
+position = Vector2(496, 213)
 
 [node name="Rock2" parent="Rocks" instance=ExtResource("4_kgiw0")]
 position = Vector2(241, 150)

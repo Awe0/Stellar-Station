@@ -11,5 +11,6 @@ func _process(delta):
 
 
 func _on_player_experience_gained(job, growthData):
+	print("hello")
 	max_value = growthData[job][2]
 	value = growthData[job][0]

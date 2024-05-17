@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://6ithyws1vhvw"]
+
+[ext_resource type="Texture2D" uid="uid://bgjj0subxgefx" path="res://Assets/Sprites/UI/Slot.png" id="1_nbceu"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_left = 13.0
+offset_top = 12.0
+offset_right = 273.0
+offset_bottom = 52.0
+
+[node name="slot1" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_nbceu")
+expand_mode = 2
+
+[node name="slot2" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_nbceu")
+expand_mode = 2
+
+[node name="slot3" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_nbceu")
+expand_mode = 2
+
+[node name="slot4" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_nbceu")
+expand_mode = 2
+
+[node name="slot5" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_nbceu")
+expand_mode = 2
+
+[node name="slot6" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_nbceu")
+expand_mode = 2
+
+[node name="slot7" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_nbceu")
+expand_mode = 2
+
+[node name="slot8" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_nbceu")
+expand_mode = 2

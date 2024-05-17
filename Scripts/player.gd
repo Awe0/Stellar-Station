@@ -3,19 +3,21 @@ extends CharacterBody2D
 signal experienceGained(job, growthData)
 
 @export var speed = 200;
+@onready var exp = $Camera2D2/UI/Experiences
 @onready var animationTree = $AnimationTree
 @onready var animationSprite = $AnimatedSprite2D2
-@onready var labelExp = $Camera2D2/UI/EXP
-@onready var labelExpTot = $Camera2D2/UI/EXPTOTAL
-@onready var labelCurrentLevel = $Camera2D2/UI/Niveau
-@onready var labelNextLevel = $Camera2D2/UI/EXPRequis
+@onready var labelExp = $Camera2D2/UI/Experiences/EXP
+@onready var labelExpTot = $Camera2D2/UI/Experiences/EXPTOTAL
+@onready var labelCurrentLevel = $Camera2D2/UI/Experiences/Niveau
+@onready var labelNextLevel = $Camera2D2/UI/Experiences/EXPRequis
+var expVisibility = false
 var inputDirection : Vector2 = Vector2.ZERO
 var jobLevels = {
 	# "JOB" : Level
 	"Mining" : 0,
 	"Felling" : 0,
 	"Harvest" : 0
-}
+}                       
 var jobExperience = {
 	# "JOB" : [Experience, Experience_total, Experience_required]
 	"Mining" : [0,0,get_required_experience(jobLevels.Mining+1)],
@@ -24,8 +26,7 @@ var jobExperience = {
 }
 
 func _ready():
-	pass
-	#animationTree.active = true
+	expVisibility = false
 
 func _physics_process(delta):
 	inputDirection = Input.get_vector("Left", "Right", "Up", "Down")
@@ -33,8 +34,10 @@ func _physics_process(delta):
 	#animation_parameters()
 	animation_sprite(inputDirection)
 	move_and_slide()
+	expHideOrShow()
 	print(jobLevels)
 	print(jobExperience)
+	
 
 func animation_sprite(direction):
 	if direction == Vector2.ZERO :
@@ -72,3 +75,17 @@ func displayExp(job):
 	labelExpTot.text = "Exp total = " + str(jobExperience[job][1])
 	labelCurrentLevel.text = "Niveau = " + str(jobLevels[job])
 	labelNextLevel.text = str(jobExperience[job][2]) + " d'xp requis pour atteindre le niveau " + str(jobLevels[job]+1)
+
+func toggleHud():
+	if Input.is_action_just_pressed("Inventory"):
+		if expVisibility == false:
+			expVisibility = true
+		else:
+			expVisibility = false
+
+func expHideOrShow():
+	toggleHud()
+	if expVisibility == true:
+		exp.show()
+	else:
+		exp.hide()
