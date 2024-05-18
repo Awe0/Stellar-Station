@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://crcr35007mj78"]
+[gd_scene load_steps=9 format=3 uid="uid://crcr35007mj78"]
 
 [ext_resource type="Texture2D" uid="uid://ct0h6k7bmpx2c" path="res://Assets/Sprites/TESTground.png" id="1_dquuf"]
-[ext_resource type="Texture2D" uid="uid://dgsi8f8qbupsb" path="res://Assets/Sprites/TESTrock.png" id="2_s78s3"]
+[ext_resource type="Texture2D" uid="uid://dgsi8f8qbupsb" path="res://Assets/Sprites/Items/Minerals/Raw/rock.png" id="2_s78s3"]
 [ext_resource type="PackedScene" uid="uid://b23w5st27dhm6" path="res://Scenes/player.tscn" id="3_o3wcb"]
 [ext_resource type="PackedScene" uid="uid://snk0p1unhn2g" path="res://Scenes/rock.tscn" id="4_kgiw0"]
+[ext_resource type="PackedScene" uid="uid://wb0yt5plc2rx" path="res://Scenes/UI/ui.tscn" id="5_f46hq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnced"]
 texture = ExtResource("1_dquuf")
@@ -30,7 +31,7 @@ sources/1 = SubResource("TileSetAtlasSource_0osuf")
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("3_o3wcb")]
-position = Vector2(373, 233)
+position = Vector2(570, 305)
 
 [node name="Rocks" type="Node" parent="."]
 
@@ -60,6 +61,12 @@ layer_1/name = "Foreground"
 layer_1/y_sort_enabled = true
 layer_1/tile_data = PackedInt32Array()
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ui" parent="CanvasLayer" instance=ExtResource("5_f46hq")]
+
+[connection signal="experienceGained" from="Player" to="CanvasLayer/Ui" method="_on_player_experience_gained"]
+[connection signal="inputInventoryJustPressed" from="Player" to="CanvasLayer/Ui" method="_on_player_input_inventory_just_pressed"]
 [connection signal="destroyed" from="Rocks/Rock" to="Player" method="_on_rock_destroyed"]
 [connection signal="destroyed" from="Rocks/Rock2" to="Player" method="_on_rock_destroyed"]
 [connection signal="destroyed" from="Rocks/Rock3" to="Player" method="_on_rock_destroyed"]

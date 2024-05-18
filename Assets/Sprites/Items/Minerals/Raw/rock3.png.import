@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mv3mdeqk7u38"
-path="res://.godot/imported/TESTrock4.png-ae2de70918600a9dc62d513bcb25baeb.ctex"
+uid="uid://38alltkxoqum"
+path="res://.godot/imported/rock3.png-1b58f2deabf8fbec0f1cceb701815841.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/TESTrock4.png"
-dest_files=["res://.godot/imported/TESTrock4.png-ae2de70918600a9dc62d513bcb25baeb.ctex"]
+source_file="res://Assets/Sprites/Items/Minerals/Raw/rock3.png"
+dest_files=["res://.godot/imported/rock3.png-1b58f2deabf8fbec0f1cceb701815841.ctex"]
 
 [params]
 

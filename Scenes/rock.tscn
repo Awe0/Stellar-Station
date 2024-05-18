@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://snk0p1unhn2g"]
 
 [ext_resource type="Script" path="res://Scripts/rock.gd" id="1_2u6xu"]
-[ext_resource type="Texture2D" uid="uid://dv3nful3du6d2" path="res://Assets/Sprites/TESTrock1.png" id="1_82c1e"]
-[ext_resource type="Texture2D" uid="uid://3d0qmeakgkx3" path="res://Assets/Sprites/TESTrock2.png" id="2_6a0g8"]
-[ext_resource type="Texture2D" uid="uid://38alltkxoqum" path="res://Assets/Sprites/TESTrock3.png" id="3_5ed7c"]
-[ext_resource type="Texture2D" uid="uid://mv3mdeqk7u38" path="res://Assets/Sprites/TESTrock4.png" id="4_wrj05"]
+[ext_resource type="Texture2D" uid="uid://dv3nful3du6d2" path="res://Assets/Sprites/Items/Minerals/Raw/rock1.png" id="1_82c1e"]
+[ext_resource type="Texture2D" uid="uid://3d0qmeakgkx3" path="res://Assets/Sprites/Items/Minerals/Raw/rock2.png" id="2_6a0g8"]
+[ext_resource type="Texture2D" uid="uid://38alltkxoqum" path="res://Assets/Sprites/Items/Minerals/Raw/rock3.png" id="3_5ed7c"]
+[ext_resource type="Texture2D" uid="uid://mv3mdeqk7u38" path="res://Assets/Sprites/Items/Minerals/Raw/rock4.png" id="4_wrj05"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u5kso"]
 animations = [{

@@ -21,14 +21,12 @@ func _process(delta):
 			animation.frame = 1
 		3,2,1:
 			animation.frame = 2
-			print(wasOnFrameTwo)
 			wasOnFrameTwo = true
 		0:
 			animation.frame = 3
 			if wasOnFrameTwo:
 				destroyed.emit(job,experience)
 				wasOnFrameTwo = false
-				print(wasOnFrameTwo)
 				
 	
 	if playerOnRang == true:

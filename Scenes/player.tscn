@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b23w5st27dhm6"]
+[gd_scene load_steps=47 format=3 uid="uid://b23w5st27dhm6"]
 
 [ext_resource type="Texture2D" uid="uid://cv4yyepnc3utf" path="res://Assets/Sprites/Characters/Player/AnimationMovements/Idle_v1.png" id="1_c84ud"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_sukd7"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dwfiwqoih1ucj" path="res://Assets/Sprites/Characters/Player/AnimationMovements/WalkLeft_v1.png" id="5_qoj5g"]
 [ext_resource type="Texture2D" uid="uid://dirp5sdoaes6c" path="res://Assets/Sprites/Characters/Player/AnimationMovements/WalkRight_v1.png" id="6_gq1ws"]
 [ext_resource type="Texture2D" uid="uid://ud2whbwo1fft" path="res://Assets/Sprites/Characters/Player/AnimationMovements/WalkUp_v1.png" id="7_3mh8i"]
-[ext_resource type="PackedScene" uid="uid://biwpwfjextfw5" path="res://Scenes/UI/expBar.tscn" id="8_2pqqb"]
-[ext_resource type="PackedScene" uid="uid://6ithyws1vhvw" path="res://Scenes/UI/itemsBartscn.tscn" id="9_8bpyp"]
 
 [sub_resource type="Animation" id="Animation_6od0s"]
 resource_name = "Idle"
@@ -613,91 +611,3 @@ offset = Vector2(0, -26)
 
 [node name="Camera2D2" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-
-[node name="UI" type="Control" parent="Camera2D2"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Experiences" type="Control" parent="Camera2D2/UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureProgressBar" parent="Camera2D2/UI/Experiences" instance=ExtResource("8_2pqqb")]
-layout_mode = 0
-offset_left = -426.0
-offset_top = -197.0
-offset_right = -187.0
-offset_bottom = -172.0
-
-[node name="EXP" type="Label" parent="Camera2D2/UI/Experiences"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -12.895
-anchor_top = -8.468
-anchor_right = -12.895
-anchor_bottom = -8.468
-offset_left = 93.8
-offset_top = 146.72
-offset_right = 145.8
-offset_bottom = 158.72
-theme_override_font_sizes/font_size = 8
-text = "Experience = "
-metadata/_edit_use_anchors_ = true
-
-[node name="EXPTOTAL" type="Label" parent="Camera2D2/UI/Experiences"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -10.325
-anchor_top = 5.962
-anchor_right = -10.325
-anchor_bottom = 5.962
-offset_left = -19.0
-offset_top = -5.48001
-offset_right = 19.0
-offset_bottom = 5.51999
-theme_override_font_sizes/font_size = 7
-text = "Exp total = "
-metadata/_edit_use_anchors_ = true
-
-[node name="Niveau" type="Label" parent="Camera2D2/UI/Experiences"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -12.878
-anchor_top = -8.51
-anchor_right = -12.878
-anchor_bottom = -8.51
-offset_left = 92.12
-offset_top = 120.4
-offset_right = 178.12
-offset_bottom = 143.4
-text = "Niveau = "
-metadata/_edit_use_anchors_ = true
-
-[node name="EXPRequis" type="Label" parent="Camera2D2/UI/Experiences"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -12.791
-anchor_top = -8.422
-anchor_right = -12.791
-anchor_bottom = -8.422
-offset_left = 100.64
-offset_top = 163.88
-offset_right = 328.64
-offset_bottom = 186.88
-text = "d'xp pour atteindre le niveau "
-metadata/_edit_use_anchors_ = true
-
-[node name="HBoxContainer" parent="Camera2D2/UI" instance=ExtResource("9_8bpyp")]
-layout_mode = 0
-offset_left = -174.0
-offset_top = 212.0
-offset_right = 174.0
-offset_bottom = 252.0
-
-[connection signal="experienceGained" from="." to="Camera2D2/UI/Experiences/TextureProgressBar" method="_on_player_experience_gained"]

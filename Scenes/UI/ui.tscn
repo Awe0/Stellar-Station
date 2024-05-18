@@ -1,0 +1,161 @@
+[gd_scene load_steps=6 format=3 uid="uid://wb0yt5plc2rx"]
+
+[ext_resource type="Texture2D" uid="uid://bgjj0subxgefx" path="res://Assets/Sprites/UI/Slot.png" id="1_emkft"]
+[ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="1_rakpa"]
+[ext_resource type="Texture2D" uid="uid://bcni11mf1eajx" path="res://Assets/Sprites/UI/FullBar.png" id="3_jvc6l"]
+[ext_resource type="Texture2D" uid="uid://cxso4r38moay4" path="res://Assets/Sprites/UI/EmptyBar.png" id="4_ubc8o"]
+[ext_resource type="Script" path="res://Scripts/UI/expBar.gd" id="5_5jm70"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rakpa")
+
+[node name="SlotBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.926
+anchor_bottom = 0.926
+offset_right = 1920.0
+offset_bottom = 60.0001
+alignment = 1
+
+[node name="slot1" type="TextureRect" parent="SlotBox"]
+layout_mode = 2
+texture = ExtResource("1_emkft")
+expand_mode = 2
+
+[node name="slot2" type="TextureRect" parent="SlotBox"]
+layout_mode = 2
+texture = ExtResource("1_emkft")
+expand_mode = 2
+
+[node name="slot3" type="TextureRect" parent="SlotBox"]
+layout_mode = 2
+texture = ExtResource("1_emkft")
+expand_mode = 2
+
+[node name="slot4" type="TextureRect" parent="SlotBox"]
+layout_mode = 2
+texture = ExtResource("1_emkft")
+expand_mode = 2
+
+[node name="slot5" type="TextureRect" parent="SlotBox"]
+layout_mode = 2
+texture = ExtResource("1_emkft")
+expand_mode = 2
+
+[node name="slot6" type="TextureRect" parent="SlotBox"]
+layout_mode = 2
+texture = ExtResource("1_emkft")
+expand_mode = 2
+
+[node name="LeftBox" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = -128.0
+offset_bottom = -128.0
+grow_vertical = 2
+color = Color(1, 1, 1, 0.137255)
+
+[node name="LabelBox" type="VBoxContainer" parent="LeftBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 95.0
+offset_right = -439.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 21
+
+[node name="MiningLevel" type="Label" parent="LeftBox/LabelBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Mining level : 0"
+
+[node name="FellingLevel" type="Label" parent="LeftBox/LabelBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Felling level : 0"
+
+[node name="HarvestLevel" type="Label" parent="LeftBox/LabelBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Harvest level : 0"
+
+[node name="ExpBox" type="VBoxContainer" parent="LeftBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 201.0
+offset_top = 128.0
+offset_right = -346.0
+offset_bottom = -734.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_constants/separation = 4
+
+[node name="MiningBar" type="TextureProgressBar" parent="LeftBox/ExpBox"]
+texture_filter = 1
+layout_mode = 2
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("3_jvc6l")
+texture_over = ExtResource("4_ubc8o")
+texture_progress = ExtResource("3_jvc6l")
+tint_under = Color(0, 0, 0, 0.243137)
+tint_over = Color(0.188235, 0, 0.188235, 1)
+tint_progress = Color(0.317647, 0, 0.317647, 1)
+script = ExtResource("5_5jm70")
+
+[node name="FellingBar" type="TextureProgressBar" parent="LeftBox/ExpBox"]
+texture_filter = 1
+layout_mode = 2
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("3_jvc6l")
+texture_over = ExtResource("4_ubc8o")
+texture_progress = ExtResource("3_jvc6l")
+tint_under = Color(0, 0, 0, 0.243137)
+tint_over = Color(0.188235, 0, 0.188235, 1)
+tint_progress = Color(0.317647, 0, 0.317647, 1)
+script = ExtResource("5_5jm70")
+jobName = 1
+
+[node name="HarvestBar" type="TextureProgressBar" parent="LeftBox/ExpBox"]
+texture_filter = 1
+layout_mode = 2
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("3_jvc6l")
+texture_over = ExtResource("4_ubc8o")
+texture_progress = ExtResource("3_jvc6l")
+tint_under = Color(0, 0, 0, 0.243137)
+tint_over = Color(0.188235, 0, 0.188235, 1)
+tint_progress = Color(0.317647, 0, 0.317647, 1)
+script = ExtResource("5_5jm70")
+jobName = 2
+
+[connection signal="experienceReceived" from="." to="LeftBox/ExpBox/MiningBar" method="_on_ui_experience_received"]
