@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://wb0yt5plc2rx"]
+[gd_scene load_steps=8 format=3 uid="uid://wb0yt5plc2rx"]
 
 [ext_resource type="Texture2D" uid="uid://bgjj0subxgefx" path="res://Assets/Sprites/UI/Slot.png" id="1_emkft"]
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="1_rakpa"]
+[ext_resource type="Texture2D" uid="uid://ce2yxvs717tq1" path="res://Assets/Sprites/Items/EmptySlot.png" id="3_c6tai"]
 [ext_resource type="Texture2D" uid="uid://bcni11mf1eajx" path="res://Assets/Sprites/UI/FullBar.png" id="3_jvc6l"]
+[ext_resource type="Script" path="res://Scripts/UI/slots.gd" id="4_ii5u7"]
 [ext_resource type="Texture2D" uid="uid://cxso4r38moay4" path="res://Assets/Sprites/UI/EmptyBar.png" id="4_ubc8o"]
 [ext_resource type="Script" path="res://Scripts/UI/expBar.gd" id="5_5jm70"]
 
@@ -15,46 +17,157 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rakpa")
 
-[node name="SlotBox" type="HBoxContainer" parent="."]
+[node name="ItemBar" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.926
-anchor_bottom = 0.926
-offset_right = 1920.0
-offset_bottom = 60.0001
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EmptySlotBox" type="HBoxContainer" parent="ItemBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
 alignment = 1
 
-[node name="slot1" type="TextureRect" parent="SlotBox"]
+[node name="slot1" type="TextureRect" parent="ItemBar/EmptySlotBox"]
 layout_mode = 2
 texture = ExtResource("1_emkft")
 expand_mode = 2
 
-[node name="slot2" type="TextureRect" parent="SlotBox"]
+[node name="slot2" type="TextureRect" parent="ItemBar/EmptySlotBox"]
 layout_mode = 2
 texture = ExtResource("1_emkft")
 expand_mode = 2
 
-[node name="slot3" type="TextureRect" parent="SlotBox"]
+[node name="slot3" type="TextureRect" parent="ItemBar/EmptySlotBox"]
 layout_mode = 2
 texture = ExtResource("1_emkft")
 expand_mode = 2
 
-[node name="slot4" type="TextureRect" parent="SlotBox"]
+[node name="slot4" type="TextureRect" parent="ItemBar/EmptySlotBox"]
 layout_mode = 2
 texture = ExtResource("1_emkft")
 expand_mode = 2
 
-[node name="slot5" type="TextureRect" parent="SlotBox"]
+[node name="slot5" type="TextureRect" parent="ItemBar/EmptySlotBox"]
 layout_mode = 2
 texture = ExtResource("1_emkft")
 expand_mode = 2
 
-[node name="slot6" type="TextureRect" parent="SlotBox"]
+[node name="slot6" type="TextureRect" parent="ItemBar/EmptySlotBox"]
 layout_mode = 2
 texture = ExtResource("1_emkft")
 expand_mode = 2
 
-[node name="LeftBox" type="ColorRect" parent="."]
+[node name="FullSlotBox" type="HBoxContainer" parent="ItemBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="slot1" type="TextureRect" parent="ItemBar/FullSlotBox"]
+layout_mode = 2
+texture = ExtResource("3_c6tai")
+expand_mode = 2
+script = ExtResource("4_ii5u7")
+
+[node name="slot2" type="TextureRect" parent="ItemBar/FullSlotBox"]
+layout_mode = 2
+texture = ExtResource("3_c6tai")
+expand_mode = 2
+script = ExtResource("4_ii5u7")
+
+[node name="slot3" type="TextureRect" parent="ItemBar/FullSlotBox"]
+layout_mode = 2
+texture = ExtResource("3_c6tai")
+expand_mode = 2
+script = ExtResource("4_ii5u7")
+
+[node name="slot4" type="TextureRect" parent="ItemBar/FullSlotBox"]
+layout_mode = 2
+texture = ExtResource("3_c6tai")
+expand_mode = 2
+script = ExtResource("4_ii5u7")
+
+[node name="slot5" type="TextureRect" parent="ItemBar/FullSlotBox"]
+layout_mode = 2
+texture = ExtResource("3_c6tai")
+expand_mode = 2
+script = ExtResource("4_ii5u7")
+
+[node name="slot6" type="TextureRect" parent="ItemBar/FullSlotBox"]
+layout_mode = 2
+texture = ExtResource("3_c6tai")
+expand_mode = 2
+script = ExtResource("4_ii5u7")
+
+[node name="CountItemBox" type="Control" parent="ItemBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ItemBar/CountItemBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="CountItem1" type="Label" parent="ItemBar/CountItemBox/HBoxContainer"]
+layout_mode = 2
+text = "11"
+
+[node name="CountItem2" type="Label" parent="ItemBar/CountItemBox/HBoxContainer"]
+layout_mode = 2
+text = "11"
+
+[node name="CountItem3" type="Label" parent="ItemBar/CountItemBox/HBoxContainer"]
+layout_mode = 2
+text = "11"
+
+[node name="CountItem4" type="Label" parent="ItemBar/CountItemBox/HBoxContainer"]
+layout_mode = 2
+text = "11"
+
+[node name="CountItem5" type="Label" parent="ItemBar/CountItemBox/HBoxContainer"]
+layout_mode = 2
+text = "11"
+
+[node name="CountItem6" type="Label" parent="ItemBar/CountItemBox/HBoxContainer"]
+layout_mode = 2
+text = "11"
+
+[node name="LeftBox" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="LeftBox"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.5
@@ -63,52 +176,46 @@ offset_left = 128.0
 offset_top = 128.0
 offset_right = -128.0
 offset_bottom = -128.0
-grow_vertical = 2
 color = Color(1, 1, 1, 0.137255)
 
-[node name="LabelBox" type="VBoxContainer" parent="LeftBox"]
+[node name="LabelBox" type="VBoxContainer" parent="LeftBox/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 37.0
-offset_top = 95.0
-offset_right = -439.0
-offset_bottom = -648.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 21
+anchor_top = 0.1
+anchor_right = 0.2
+anchor_bottom = 0.1
+offset_left = 64.0
+theme_override_constants/separation = 18
 
-[node name="MiningLevel" type="Label" parent="LeftBox/LabelBox"]
+[node name="MiningLevel" type="Label" parent="LeftBox/ColorRect/LabelBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Mining level : 0"
 
-[node name="FellingLevel" type="Label" parent="LeftBox/LabelBox"]
+[node name="FellingLevel" type="Label" parent="LeftBox/ColorRect/LabelBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Felling level : 0"
 
-[node name="HarvestLevel" type="Label" parent="LeftBox/LabelBox"]
+[node name="HarvestLevel" type="Label" parent="LeftBox/ColorRect/LabelBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Harvest level : 0"
 
-[node name="ExpBox" type="VBoxContainer" parent="LeftBox"]
+[node name="ExpBox" type="VBoxContainer" parent="LeftBox/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 201.0
-offset_top = 128.0
-offset_right = -346.0
-offset_bottom = -734.0
+anchor_left = 0.085
+anchor_top = 0.1
+anchor_right = 0.316
+anchor_bottom = 0.1
+offset_top = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 theme_override_constants/separation = 4
 
-[node name="MiningBar" type="TextureProgressBar" parent="LeftBox/ExpBox"]
+[node name="MiningBar" type="TextureProgressBar" parent="LeftBox/ColorRect/ExpBox"]
 texture_filter = 1
 layout_mode = 2
 nine_patch_stretch = true
@@ -124,7 +231,7 @@ tint_over = Color(0.188235, 0, 0.188235, 1)
 tint_progress = Color(0.317647, 0, 0.317647, 1)
 script = ExtResource("5_5jm70")
 
-[node name="FellingBar" type="TextureProgressBar" parent="LeftBox/ExpBox"]
+[node name="FellingBar" type="TextureProgressBar" parent="LeftBox/ColorRect/ExpBox"]
 texture_filter = 1
 layout_mode = 2
 nine_patch_stretch = true
@@ -141,7 +248,7 @@ tint_progress = Color(0.317647, 0, 0.317647, 1)
 script = ExtResource("5_5jm70")
 jobName = 1
 
-[node name="HarvestBar" type="TextureProgressBar" parent="LeftBox/ExpBox"]
+[node name="HarvestBar" type="TextureProgressBar" parent="LeftBox/ColorRect/ExpBox"]
 texture_filter = 1
 layout_mode = 2
 nine_patch_stretch = true
@@ -158,4 +265,5 @@ tint_progress = Color(0.317647, 0, 0.317647, 1)
 script = ExtResource("5_5jm70")
 jobName = 2
 
-[connection signal="experienceReceived" from="." to="LeftBox/ExpBox/MiningBar" method="_on_ui_experience_received"]
+[connection signal="addToSlot" from="." to="ItemBar/FullSlotBox/slot1" method="_on_ui_add_to_slot"]
+[connection signal="experienceReceived" from="." to="LeftBox/ColorRect/ExpBox/MiningBar" method="_on_ui_experience_received"]

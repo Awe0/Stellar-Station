@@ -1,6 +1,7 @@
 extends Control
 
 signal experienceReceived(growthData, jobLevels)
+signal addToSlot()
 
 @onready var leftBox = $LeftBox
 
@@ -26,3 +27,7 @@ func _on_player_input_inventory_just_pressed():
 
 func _on_player_experience_gained(growthData, jobLevels):
 	experienceReceived.emit(growthData, jobLevels)
+
+
+func _on_rock_destroyed(job, experience):
+	addToSlot.emit()

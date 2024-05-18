@@ -39,16 +39,16 @@ position = Vector2(570, 305)
 position = Vector2(496, 213)
 
 [node name="Rock2" parent="Rocks" instance=ExtResource("4_kgiw0")]
-position = Vector2(241, 150)
+position = Vector2(590, 373)
 
 [node name="Rock3" parent="Rocks" instance=ExtResource("4_kgiw0")]
-position = Vector2(656, 265)
+position = Vector2(487, 329)
 
 [node name="Rock4" parent="Rocks" instance=ExtResource("4_kgiw0")]
-position = Vector2(197, 252)
+position = Vector2(650, 275)
 
 [node name="Rock5" parent="Rocks" instance=ExtResource("4_kgiw0")]
-position = Vector2(376, 355)
+position = Vector2(586, 230)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -68,7 +68,12 @@ layer_1/tile_data = PackedInt32Array()
 [connection signal="experienceGained" from="Player" to="CanvasLayer/Ui" method="_on_player_experience_gained"]
 [connection signal="inputInventoryJustPressed" from="Player" to="CanvasLayer/Ui" method="_on_player_input_inventory_just_pressed"]
 [connection signal="destroyed" from="Rocks/Rock" to="Player" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Rocks/Rock" to="CanvasLayer/Ui" method="_on_rock_destroyed"]
 [connection signal="destroyed" from="Rocks/Rock2" to="Player" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Rocks/Rock2" to="CanvasLayer/Ui" method="_on_rock_destroyed"]
 [connection signal="destroyed" from="Rocks/Rock3" to="Player" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Rocks/Rock3" to="CanvasLayer/Ui" method="_on_rock_destroyed"]
 [connection signal="destroyed" from="Rocks/Rock4" to="Player" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Rocks/Rock4" to="CanvasLayer/Ui" method="_on_rock_destroyed"]
 [connection signal="destroyed" from="Rocks/Rock5" to="Player" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Rocks/Rock5" to="CanvasLayer/Ui" method="_on_rock_destroyed"]
