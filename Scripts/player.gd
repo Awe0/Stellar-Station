@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+signal levelUp(job)
 signal experienceGained(job, growthData, jobLevels)
 signal inputInventoryJustPressed()
 
@@ -59,10 +59,11 @@ func gain_experience(job,amount):
 	experienceGained.emit(jobExperience, jobLevels)
 
 func level_up(job):
+	levelUp.emit(job)
 	jobLevels[job] += 1
 	jobExperience[job][2] = get_required_experience(jobLevels[job]+1)
 	
-func _on_rock_destroyed(job, exp):
+func _on_rock_destroyed(job, exp, count):
 	gain_experience(job, exp)
 
 func toggleInventory():

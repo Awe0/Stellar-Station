@@ -1,14 +1,16 @@
 extends Node2D
-signal destroyed(job, experience)
+signal destroyed(job, experience, count)
 @export var job = "Mining"
-@export var experience = 5
+@export var experience = 10
 @onready var animation = $AnimatedSprite2D
 @onready var timer = $RespawnTimer
-var respawnTimer = 10
+var respawnTimer = 3
 var healthPoints = 10
 var playerOnRang = false
 var wasOnFrameTwo = false
-
+var levelPlayer = 0 
+var lootMax = 3
+var lootMin = 1
 
 func _ready():
 	pass
@@ -25,7 +27,8 @@ func _process(delta):
 		0:
 			animation.frame = 3
 			if wasOnFrameTwo:
-				destroyed.emit(job,experience)
+				var count = randi_range(lootMin,lootMax)
+				destroyed.emit(job,experience, count)
 				wasOnFrameTwo = false
 				
 	
@@ -49,3 +52,6 @@ func _on_collactable_zone_body_exited(body):
 func _on_timer_timeout():
 	animation.frame = 0
 	healthPoints = 10
+
+func _on_ui_experience_received(growthData, jobLevels):
+	levelPlayer = jobLevels[job]

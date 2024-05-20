@@ -1,8 +1,9 @@
-extends TextureRect
+extends Label
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	texture = load("res://Assets/Sprites/Items/EmptySlot.png")
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -11,4 +12,5 @@ func _process(delta):
 
 
 func _on_ui_add_to_slot(count):
-	texture = load("res://Assets/Sprites/Items/Minerals/Loots/rock_unit.png")
+	text = str(count)
+	
