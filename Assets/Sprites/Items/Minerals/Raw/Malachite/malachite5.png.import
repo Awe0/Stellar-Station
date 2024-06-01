@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mv3mdeqk7u38"
-path="res://.godot/imported/rock4.png-44d140ee493da8203c70693bce1b5b77.ctex"
+uid="uid://blx15hr22gsdq"
+path="res://.godot/imported/malachite5.png-fb837f06bcf92f28a72a2724bf4a3bb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Items/Minerals/Raw/rock4.png"
-dest_files=["res://.godot/imported/rock4.png-44d140ee493da8203c70693bce1b5b77.ctex"]
+source_file="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite5.png"
+dest_files=["res://.godot/imported/malachite5.png-fb837f06bcf92f28a72a2724bf4a3bb8.ctex"]
 
 [params]
 

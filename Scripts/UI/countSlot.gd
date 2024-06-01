@@ -11,6 +11,7 @@ func _process(delta):
 	pass
 
 
-func _on_ui_add_to_slot(count):
+func _on_ui_add_to_slot(count, item):
+	print(count)
 	text = str(count)
 	

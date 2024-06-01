@@ -10,5 +10,5 @@ func _process(delta):
 	pass
 
 
-func _on_ui_add_to_slot(count):
-	texture = load("res://Assets/Sprites/Items/Minerals/Loots/rock_unit.png")
+func _on_ui_add_to_slot(count, item):
+	texture = load("res://Assets/Sprites/Items/Minerals/Loots/"+ item +"_unit.png")

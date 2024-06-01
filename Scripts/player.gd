@@ -63,7 +63,7 @@ func level_up(job):
 	jobLevels[job] += 1
 	jobExperience[job][2] = get_required_experience(jobLevels[job]+1)
 	
-func _on_rock_destroyed(job, exp, count):
+func _on_rock_destroyed(job, exp, count, item):
 	gain_experience(job, exp)
 
 func toggleInventory():

@@ -1,7 +1,7 @@
 extends Control
 
 signal experienceReceived(growthData, jobLevels)
-signal addToSlot(count)
+signal addToSlot(count, item)
 
 @onready var leftBox = $LeftBox
 
@@ -30,6 +30,6 @@ func _on_player_experience_gained(growthData, jobLevels):
 	experienceReceived.emit(growthData, jobLevels)
 
 
-func _on_rock_destroyed(job, experience, count):
+func _on_rock_destroyed(job, experience, count, items):
 	itemNumber += count
-	addToSlot.emit(itemNumber)
+	addToSlot.emit(itemNumber, items)

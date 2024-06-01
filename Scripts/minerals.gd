@@ -1,16 +1,21 @@
 extends Node2D
-signal destroyed(job, experience, count)
-@export var job = "Mining"
-@export var experience = 10
+signal destroyed(job, experience, count, items)
+@export var job: String = "Mining"
+@export var experience: int = 10
+@export var itemList: Array = ["rock", "gold", "malachite"]
+
 @onready var animation = $AnimatedSprite2D
 @onready var timer = $RespawnTimer
-var respawnTimer = 3
-var healthPoints = 10
-var playerOnRang = false
-var wasOnFrameTwo = false
-var levelPlayer = 0 
-var lootMax = 3
-var lootMin = 1
+
+var respawnTimer: int = 3
+var healthPoints: int = 10
+var playerOnRang: bool = false
+var wasOnFrameTwo: bool = false
+var levelPlayer: int = 0 
+var lootMax: int = 3
+var lootMin: int = 1
+
+
 
 func _ready():
 	pass
@@ -25,12 +30,14 @@ func _process(delta):
 			animation.frame = 2
 			wasOnFrameTwo = true
 		0:
-			animation.frame = 3
 			if wasOnFrameTwo:
+				animation.play()
 				var count = randi_range(lootMin,lootMax)
-				destroyed.emit(job,experience, count)
-				wasOnFrameTwo = false
-				
+				var current_animation = animation.animation
+				for item in itemList:
+					if item == current_animation:
+						destroyed.emit(job,experience, count, item)
+						wasOnFrameTwo = false
 	
 	if playerOnRang == true:
 		if Input.is_action_just_pressed("Collect"):
@@ -55,3 +62,4 @@ func _on_timer_timeout():
 
 func _on_ui_experience_received(growthData, jobLevels):
 	levelPlayer = jobLevels[job]
+
