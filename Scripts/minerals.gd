@@ -1,12 +1,13 @@
 extends Node2D
 signal destroyed(job, experience, count, items)
+@export_enum("nothing", "rock", "gold", "malachite") var selected_animation: String
 @export var job: String = "Mining"
 @export var experience: int = 10
-@export var itemList: Array = ["rock", "gold", "malachite"]
 
 @onready var animation = $AnimatedSprite2D
 @onready var timer = $RespawnTimer
 
+var itemList: Array = ["nothing","rock", "gold", "malachite"]
 var respawnTimer: int = 3
 var healthPoints: int = 10
 var playerOnRang: bool = false
@@ -15,10 +16,12 @@ var levelPlayer: int = 0
 var lootMax: int = 3
 var lootMin: int = 1
 
-
-
 func _ready():
-	pass
+	display_selected_animation()
+
+func display_selected_animation():
+	animation.play(selected_animation)
+
 
 func _process(delta):
 	match healthPoints:
@@ -32,8 +35,8 @@ func _process(delta):
 		0:
 			if wasOnFrameTwo:
 				animation.play()
-				var count = randi_range(lootMin,lootMax)
 				var current_animation = animation.animation
+				var count = randi_range(lootMin,lootMax)
 				for item in itemList:
 					if item == current_animation:
 						destroyed.emit(job,experience, count, item)

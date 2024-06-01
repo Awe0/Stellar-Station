@@ -35,8 +35,21 @@ position = Vector2(570, 305)
 
 [node name="Minerals" type="Node" parent="."]
 
-[node name="Rock" parent="Minerals" instance=ExtResource("4_kgiw0")]
-position = Vector2(565, 350)
+[node name="nothing" parent="Minerals" instance=ExtResource("4_kgiw0")]
+position = Vector2(598, 333)
+selected_animation = "nothing"
+
+[node name="rock" parent="Minerals" instance=ExtResource("4_kgiw0")]
+position = Vector2(505, 355)
+selected_animation = "malachite"
+
+[node name="malachite" parent="Minerals" instance=ExtResource("4_kgiw0")]
+position = Vector2(689, 340)
+selected_animation = "malachite"
+
+[node name="gold" parent="Minerals" instance=ExtResource("4_kgiw0")]
+position = Vector2(605, 407)
+selected_animation = "gold"
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -55,5 +68,11 @@ layer_1/tile_data = PackedInt32Array()
 
 [connection signal="experienceGained" from="Player" to="CanvasLayer/Ui" method="_on_player_experience_gained"]
 [connection signal="inputInventoryJustPressed" from="Player" to="CanvasLayer/Ui" method="_on_player_input_inventory_just_pressed"]
-[connection signal="destroyed" from="Minerals/Rock" to="Player" method="_on_rock_destroyed"]
-[connection signal="destroyed" from="Minerals/Rock" to="CanvasLayer/Ui" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Minerals/nothing" to="Player" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Minerals/nothing" to="CanvasLayer/Ui" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Minerals/rock" to="Player" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Minerals/rock" to="CanvasLayer/Ui" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Minerals/malachite" to="Player" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Minerals/malachite" to="CanvasLayer/Ui" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Minerals/gold" to="Player" method="_on_rock_destroyed"]
+[connection signal="destroyed" from="Minerals/gold" to="CanvasLayer/Ui" method="_on_rock_destroyed"]

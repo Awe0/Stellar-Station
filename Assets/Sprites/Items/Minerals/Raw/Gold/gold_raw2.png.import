@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkvd7a7x4ofh"
-path="res://.godot/imported/Gold4.png-6a691a97451b0ca795ffb6ba2ddea9a9.ctex"
+uid="uid://do11d6dwxte4m"
+path="res://.godot/imported/gold_raw2.png-689646e79db9b03030d46fed7311e17f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Items/Minerals/Raw/Gold/Gold4.png"
-dest_files=["res://.godot/imported/Gold4.png-6a691a97451b0ca795ffb6ba2ddea9a9.ctex"]
+source_file="res://Assets/Sprites/Items/Minerals/Raw/Gold/gold_raw2.png"
+dest_files=["res://.godot/imported/gold_raw2.png-689646e79db9b03030d46fed7311e17f.ctex"]
 
 [params]
 

@@ -1,16 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://snk0p1unhn2g"]
+[gd_scene load_steps=24 format=3 uid="uid://snk0p1unhn2g"]
 
 [ext_resource type="Script" path="res://Scripts/minerals.gd" id="1_2u6xu"]
 [ext_resource type="Texture2D" uid="uid://dv3nful3du6d2" path="res://Assets/Sprites/Items/Minerals/Raw/Rock/rock1.png" id="1_82c1e"]
 [ext_resource type="Texture2D" uid="uid://3d0qmeakgkx3" path="res://Assets/Sprites/Items/Minerals/Raw/Rock/rock2.png" id="2_6a0g8"]
-[ext_resource type="Texture2D" uid="uid://cs82wld7uw7a2" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/Gold1.png" id="2_gec2x"]
+[ext_resource type="Texture2D" uid="uid://fnd8u6t8p5l4" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/gold_raw1.png" id="2_phrpg"]
 [ext_resource type="Texture2D" uid="uid://38alltkxoqum" path="res://Assets/Sprites/Items/Minerals/Raw/Rock/rock3.png" id="3_5ed7c"]
-[ext_resource type="Texture2D" uid="uid://ddpiaeuyryjnh" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/Gold2.png" id="3_oee37"]
-[ext_resource type="Texture2D" uid="uid://clal6v5l0187j" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/Gold3.png" id="4_l6c8s"]
+[ext_resource type="Texture2D" uid="uid://do11d6dwxte4m" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/gold_raw2.png" id="3_soolu"]
+[ext_resource type="Texture2D" uid="uid://dppyw6gbq5dx8" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/gold_raw3.png" id="4_fk6mx"]
 [ext_resource type="Texture2D" uid="uid://mv3mdeqk7u38" path="res://Assets/Sprites/Items/Minerals/Raw/Rock/rock4.png" id="4_wrj05"]
-[ext_resource type="Texture2D" uid="uid://bkvd7a7x4ofh" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/Gold4.png" id="5_ae8vc"]
-[ext_resource type="Texture2D" uid="uid://u7tyt3wa8vfg" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/Gold5.png" id="6_6j0oj"]
-[ext_resource type="Texture2D" uid="uid://fqwutqv524vn" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/Gold6.png" id="7_i2q16"]
+[ext_resource type="Texture2D" uid="uid://p6a6fl16yaug" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/gold_raw4.png" id="5_0nbqg"]
+[ext_resource type="Texture2D" uid="uid://csung7ucc3yya" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/gold_raw5.png" id="6_56n5b"]
+[ext_resource type="Texture2D" uid="uid://bfla3hbetjc0a" path="res://Assets/Sprites/Items/Minerals/Raw/Gold/gold_raw6.png" id="7_gbqim"]
 [ext_resource type="Texture2D" uid="uid://cnm8atmdg3rli" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite1.png" id="8_lorwb"]
 [ext_resource type="Texture2D" uid="uid://bp5hirtppl8vk" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite2.png" id="9_ek5se"]
 [ext_resource type="Texture2D" uid="uid://d0d80otluymo3" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite3.png" id="10_lbf4c"]
@@ -19,27 +19,28 @@
 [ext_resource type="Texture2D" uid="uid://5bndsr1wufah" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite6.png" id="13_4j15e"]
 [ext_resource type="Texture2D" uid="uid://dhper5cguah3e" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite7.png" id="14_sgblx"]
 [ext_resource type="Texture2D" uid="uid://pmuipladpxq4" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite8.png" id="15_0l6ik"]
+[ext_resource type="Texture2D" uid="uid://bkfj6qebs5wa3" path="res://Assets/Sprites/block_error.png" id="16_sfije"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u5kso"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_gec2x")
+"texture": ExtResource("2_phrpg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_oee37")
+"texture": ExtResource("3_soolu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_l6c8s")
+"texture": ExtResource("4_fk6mx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ae8vc")
+"texture": ExtResource("5_0nbqg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_6j0oj")
+"texture": ExtResource("6_56n5b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_i2q16")
+"texture": ExtResource("7_gbqim")
 }],
 "loop": false,
 "name": &"gold",
@@ -76,6 +77,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("16_sfije")
+}],
+"loop": true,
+"name": &"nothing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_82c1e")
 }, {
 "duration": 1.0,
@@ -107,7 +116,7 @@ visibility_layer = 2
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u5kso")
-animation = &"malachite"
+animation = &"gold"
 offset = Vector2(0, -9)
 
 [node name="CollactableZone" type="Area2D" parent="AnimatedSprite2D"]

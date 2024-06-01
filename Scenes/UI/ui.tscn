@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://wb0yt5plc2rx"]
+[gd_scene load_steps=8 format=3 uid="uid://wb0yt5plc2rx"]
 
 [ext_resource type="Texture2D" uid="uid://bgjj0subxgefx" path="res://Assets/Sprites/UI/Slot.png" id="1_emkft"]
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="1_rakpa"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://Scripts/UI/slots.gd" id="4_ii5u7"]
 [ext_resource type="Texture2D" uid="uid://cxso4r38moay4" path="res://Assets/Sprites/UI/EmptyBar.png" id="4_ubc8o"]
 [ext_resource type="Script" path="res://Scripts/UI/expBar.gd" id="5_5jm70"]
-[ext_resource type="Script" path="res://Scripts/UI/countSlot.gd" id="5_o2ftr"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -79,12 +78,12 @@ offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
+script = ExtResource("4_ii5u7")
 
 [node name="slot1" type="TextureRect" parent="ItemBar/FullSlotBox"]
 layout_mode = 2
 texture = ExtResource("3_c6tai")
 expand_mode = 2
-script = ExtResource("4_ii5u7")
 
 [node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot1"]
 layout_mode = 1
@@ -98,13 +97,11 @@ alignment = 2
 [node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot1/BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-script = ExtResource("5_o2ftr")
 
 [node name="slot2" type="TextureRect" parent="ItemBar/FullSlotBox"]
 layout_mode = 2
 texture = ExtResource("3_c6tai")
 expand_mode = 2
-script = ExtResource("4_ii5u7")
 
 [node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot2"]
 layout_mode = 1
@@ -118,13 +115,11 @@ alignment = 2
 [node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot2/BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-script = ExtResource("5_o2ftr")
 
 [node name="slot3" type="TextureRect" parent="ItemBar/FullSlotBox"]
 layout_mode = 2
 texture = ExtResource("3_c6tai")
 expand_mode = 2
-script = ExtResource("4_ii5u7")
 
 [node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot3"]
 layout_mode = 1
@@ -138,13 +133,11 @@ alignment = 2
 [node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot3/BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-script = ExtResource("5_o2ftr")
 
 [node name="slot4" type="TextureRect" parent="ItemBar/FullSlotBox"]
 layout_mode = 2
 texture = ExtResource("3_c6tai")
 expand_mode = 2
-script = ExtResource("4_ii5u7")
 
 [node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot4"]
 layout_mode = 1
@@ -158,13 +151,11 @@ alignment = 2
 [node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot4/BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-script = ExtResource("5_o2ftr")
 
 [node name="slot5" type="TextureRect" parent="ItemBar/FullSlotBox"]
 layout_mode = 2
 texture = ExtResource("3_c6tai")
 expand_mode = 2
-script = ExtResource("4_ii5u7")
 
 [node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot5"]
 layout_mode = 1
@@ -178,13 +169,11 @@ alignment = 2
 [node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot5/BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-script = ExtResource("5_o2ftr")
 
 [node name="slot6" type="TextureRect" parent="ItemBar/FullSlotBox"]
 layout_mode = 2
 texture = ExtResource("3_c6tai")
 expand_mode = 2
-script = ExtResource("4_ii5u7")
 
 [node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot6"]
 layout_mode = 1
@@ -198,7 +187,6 @@ alignment = 2
 [node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot6/BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-script = ExtResource("5_o2ftr")
 
 [node name="LeftBox" type="Control" parent="."]
 layout_mode = 1
@@ -306,6 +294,5 @@ tint_progress = Color(0.317647, 0, 0.317647, 1)
 script = ExtResource("5_5jm70")
 jobName = 2
 
-[connection signal="addToSlot" from="." to="ItemBar/FullSlotBox/slot1" method="_on_ui_add_to_slot"]
-[connection signal="addToSlot" from="." to="ItemBar/FullSlotBox/slot1/BoxContainer/CountSlot" method="_on_ui_add_to_slot"]
+[connection signal="addToSlot" from="." to="ItemBar/FullSlotBox" method="_on_ui_add_to_slot"]
 [connection signal="experienceReceived" from="." to="LeftBox/ColorRect/ExpBox/MiningBar" method="_on_ui_experience_received"]
