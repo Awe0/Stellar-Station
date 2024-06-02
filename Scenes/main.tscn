@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://crcr35007mj78"]
+[gd_scene load_steps=11 format=3 uid="uid://crcr35007mj78"]
 
 [ext_resource type="Texture2D" uid="uid://ct0h6k7bmpx2c" path="res://Assets/Sprites/TESTground.png" id="1_dquuf"]
 [ext_resource type="Texture2D" uid="uid://dgsi8f8qbupsb" path="res://Assets/Sprites/Items/Minerals/Raw/Rock/rock.png" id="2_s78s3"]
 [ext_resource type="PackedScene" uid="uid://b23w5st27dhm6" path="res://Scenes/player.tscn" id="3_o3wcb"]
-[ext_resource type="PackedScene" uid="uid://snk0p1unhn2g" path="res://Scenes/minerals.tscn" id="4_kgiw0"]
+[ext_resource type="PackedScene" uid="uid://i2tmjqatadi" path="res://Scenes/minerals.tscn" id="4_kgiw0"]
 [ext_resource type="PackedScene" uid="uid://wb0yt5plc2rx" path="res://Scenes/UI/ui.tscn" id="5_f46hq"]
+[ext_resource type="PackedScene" uid="uid://bh78bt1svyotm" path="res://Scenes/pnj.tscn" id="6_yd2hw"]
+[ext_resource type="PackedScene" uid="uid://csslafxb3tjfg" path="res://Scenes/furnace.tscn" id="7_oci17"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnced"]
 texture = ExtResource("1_dquuf")
@@ -33,7 +35,11 @@ y_sort_enabled = true
 [node name="Player" parent="." instance=ExtResource("3_o3wcb")]
 position = Vector2(570, 305)
 
-[node name="Minerals" type="Node" parent="."]
+[node name="Minerals" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="PNJ" parent="Minerals" instance=ExtResource("6_yd2hw")]
+position = Vector2(744, 264)
 
 [node name="nothing" parent="Minerals" instance=ExtResource("4_kgiw0")]
 position = Vector2(598, 333)
@@ -41,15 +47,17 @@ selected_animation = "nothing"
 
 [node name="rock" parent="Minerals" instance=ExtResource("4_kgiw0")]
 position = Vector2(505, 355)
-selected_animation = "malachite"
+selected_animation = "rock"
 
 [node name="malachite" parent="Minerals" instance=ExtResource("4_kgiw0")]
 position = Vector2(689, 340)
 selected_animation = "malachite"
+experience = 20
 
 [node name="gold" parent="Minerals" instance=ExtResource("4_kgiw0")]
 position = Vector2(605, 407)
 selected_animation = "gold"
+experience = 15
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -65,6 +73,9 @@ layer_1/tile_data = PackedInt32Array()
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Ui" parent="CanvasLayer" instance=ExtResource("5_f46hq")]
+
+[node name="Furnace" parent="." instance=ExtResource("7_oci17")]
+position = Vector2(841, 239)
 
 [connection signal="experienceGained" from="Player" to="CanvasLayer/Ui" method="_on_player_experience_gained"]
 [connection signal="inputInventoryJustPressed" from="Player" to="CanvasLayer/Ui" method="_on_player_input_inventory_just_pressed"]

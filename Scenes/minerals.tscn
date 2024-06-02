@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://snk0p1unhn2g"]
+[gd_scene load_steps=23 format=3 uid="uid://i2tmjqatadi"]
 
 [ext_resource type="Script" path="res://Scripts/minerals.gd" id="1_2u6xu"]
 [ext_resource type="Texture2D" uid="uid://dv3nful3du6d2" path="res://Assets/Sprites/Items/Minerals/Raw/Rock/rock1.png" id="1_82c1e"]
@@ -19,9 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://5bndsr1wufah" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite6.png" id="13_4j15e"]
 [ext_resource type="Texture2D" uid="uid://dhper5cguah3e" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite7.png" id="14_sgblx"]
 [ext_resource type="Texture2D" uid="uid://pmuipladpxq4" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite8.png" id="15_0l6ik"]
-[ext_resource type="Texture2D" uid="uid://bkfj6qebs5wa3" path="res://Assets/Sprites/block_error.png" id="16_sfije"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_u5kso"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_24k4d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -77,14 +76,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_sfije")
-}],
-"loop": true,
-"name": &"nothing",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("1_82c1e")
 }, {
 "duration": 1.0,
@@ -101,43 +92,34 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qvxd0"]
-radius = 27.2947
+[sub_resource type="CircleShape2D" id="CircleShape2D_1kd15"]
+radius = 22.0907
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0fxc"]
-size = Vector2(27, 11)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knfcq"]
+size = Vector2(27, 10)
 
-[node name="Ressourses" type="Node2D" groups=["Ores"]]
-visibility_layer = 2
+[node name="Minerals" type="Node2D"]
 script = ExtResource("1_2u6xu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visibility_layer = 2
-y_sort_enabled = true
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_u5kso")
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_24k4d")
 animation = &"gold"
-offset = Vector2(0, -9)
 
-[node name="CollactableZone" type="Area2D" parent="AnimatedSprite2D"]
-visibility_layer = 2
-position = Vector2(0, -8)
+[node name="CollactableZone" type="Area2D" parent="."]
+position = Vector2(0, -10)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/CollactableZone"]
-visibility_layer = 2
-shape = SubResource("CircleShape2D_qvxd0")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollactableZone"]
+shape = SubResource("CircleShape2D_1kd15")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visibility_layer = 2
-position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-visibility_layer = 2
-position = Vector2(-0.5, 3.5)
-shape = SubResource("RectangleShape2D_g0fxc")
+position = Vector2(-0.5, -5)
+shape = SubResource("RectangleShape2D_knfcq")
 
 [node name="RespawnTimer" type="Timer" parent="."]
 
-[connection signal="body_entered" from="AnimatedSprite2D/CollactableZone" to="." method="_on_collactable_zone_body_entered"]
-[connection signal="body_exited" from="AnimatedSprite2D/CollactableZone" to="." method="_on_collactable_zone_body_exited"]
-[connection signal="timeout" from="RespawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="CollactableZone" to="." method="_on_collactable_zone_body_entered"]
+[connection signal="body_exited" from="CollactableZone" to="." method="_on_collactable_zone_body_exited"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

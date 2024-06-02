@@ -605,9 +605,9 @@ one_way_collision_margin = 0.0
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
+position = Vector2(0, -27)
 sprite_frames = SubResource("SpriteFrames_x3g2h")
 animation = &"Idle"
-offset = Vector2(0, -26)
 
 [node name="Camera2D2" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

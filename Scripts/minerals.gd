@@ -59,10 +59,9 @@ func _on_collactable_zone_body_exited(body):
 	if body.is_in_group("player"):
 		playerOnRang = false
 
-func _on_timer_timeout():
+func _on_respawn_timer_timeout():
 	animation.frame = 0
 	healthPoints = 10
 
 func _on_ui_experience_received(growthData, jobLevels):
 	levelPlayer = jobLevels[job]
-

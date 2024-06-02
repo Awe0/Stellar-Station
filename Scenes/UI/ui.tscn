@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wb0yt5plc2rx"]
+[gd_scene load_steps=9 format=3 uid="uid://wb0yt5plc2rx"]
 
 [ext_resource type="Texture2D" uid="uid://bgjj0subxgefx" path="res://Assets/Sprites/UI/Slot.png" id="1_emkft"]
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="1_rakpa"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/slots.gd" id="4_ii5u7"]
 [ext_resource type="Texture2D" uid="uid://cxso4r38moay4" path="res://Assets/Sprites/UI/EmptyBar.png" id="4_ubc8o"]
 [ext_resource type="Script" path="res://Scripts/UI/expBar.gd" id="5_5jm70"]
+[ext_resource type="PackedScene" uid="uid://c3sngj7q11nqg" path="res://Scenes/UI/graduate_flask.tscn" id="8_lgmc4"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -293,6 +294,9 @@ tint_over = Color(0.188235, 0, 0.188235, 1)
 tint_progress = Color(0.317647, 0, 0.317647, 1)
 script = ExtResource("5_5jm70")
 jobName = 2
+
+[node name="Control" parent="." instance=ExtResource("8_lgmc4")]
+layout_mode = 1
 
 [connection signal="addToSlot" from="." to="ItemBar/FullSlotBox" method="_on_ui_add_to_slot"]
 [connection signal="experienceReceived" from="." to="LeftBox/ColorRect/ExpBox/MiningBar" method="_on_ui_experience_received"]
