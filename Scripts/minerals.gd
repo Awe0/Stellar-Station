@@ -36,10 +36,10 @@ func _process(delta):
 			if wasOnFrameTwo:
 				animation.play()
 				var current_animation = animation.animation
-				var count = randi_range(lootMin,lootMax)
+				var amountOfLoot = randi_range(lootMin,lootMax)
 				for item in itemList:
 					if item == current_animation:
-						destroyed.emit(job,experience, count, item)
+						destroyed.emit(job,experience, amountOfLoot, item)
 						wasOnFrameTwo = false
 	
 	if playerOnRang == true:

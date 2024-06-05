@@ -2,26 +2,26 @@ extends CharacterBody2D
 signal levelUp(job)
 signal experienceGained(job, growthData, jobLevels)
 signal inputInventoryJustPressed()
+signal inputInteractionJustPressed()
+signal enduranceChanged(enduranceAmount)
 
-@export var speed = 200;
+@export var endurance: int = 100
+@export var speed: int = 200;
 @onready var animationTree = $AnimationTree
 @onready var animationSprite = $AnimatedSprite2D2
 
 var inputDirection : Vector2 = Vector2.ZERO
-var jobLevels = {
+var jobLevels: Dictionary = {
 	# "JOB" : Level
 	"Mining" : 0,
 	"Felling" : 0,
 	"Harvest" : 0
 }                       
-var jobExperience = {
+var jobExperience: Dictionary = {
 	# "JOB" : [Experience, Experience_total, Experience_required]
 	"Mining" : [0,0,get_required_experience(jobLevels.Mining+1)],
 	"Felling" : [0,0,get_required_experience(jobLevels.Felling+1)],
 	"Harvest" : [0,0,get_required_experience(jobLevels.Harvest+1)]
-#	labelExp.text = "Experience = " + str(jobExperience[job][0])
-#	labelExpTot.text = "Exp total = " + str(jobExperience[job][1])
-#	labelNextLevel.text = str(jobExperience[job][2]) + " d'xp requis pour atteindre le niveau " + str(jobLevels[job]+1)
 }
 
 func _ready():
@@ -30,9 +30,9 @@ func _ready():
 func _physics_process(delta):
 	inputDirection = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = inputDirection * speed
-	#animation_parameters()
 	animation_sprite(inputDirection)
 	toggleInventory()
+	toggleInteraction()
 	move_and_slide()
 
 func animation_sprite(direction):
@@ -63,10 +63,24 @@ func level_up(job):
 	jobLevels[job] += 1
 	jobExperience[job][2] = get_required_experience(jobLevels[job]+1)
 	
-func _on_rock_destroyed(job, exp, count, item):
-	gain_experience(job, exp)
 
 func toggleInventory():
 	if Input.is_action_just_pressed("Inventory"):
 		inputInventoryJustPressed.emit()
 
+func toggleInteraction():
+	if Input.is_action_just_pressed("Interation"):
+		inputInteractionJustPressed.emit()
+
+func enduranceGainOrLose(quantity):
+	endurance += quantity
+	enduranceChanged.emit(endurance)
+	if endurance <= 0:
+		endurance = 0
+	print(endurance)
+
+
+func _on_main_exp_for_player(job, exp):
+	var enduQuantityLost: int = -5
+	enduranceGainOrLose(enduQuantityLost)
+	gain_experience(job, exp)
