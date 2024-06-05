@@ -358,7 +358,7 @@ grow_vertical = 2
 script = ExtResource("1_xa75n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(172.5, 177.5)
+position = Vector2(130, 131)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_alrt8")
 animation = &"100"

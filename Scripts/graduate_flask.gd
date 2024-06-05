@@ -2,7 +2,7 @@ extends Control
 
 @onready var animation = $AnimatedSprite2D
 
-@export var quantity: int = 10021
+@export var quantity: int = 100
 
 func _ready():
 	pass

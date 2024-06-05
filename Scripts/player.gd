@@ -77,7 +77,6 @@ func enduranceGainOrLose(quantity):
 	enduranceChanged.emit(endurance)
 	if endurance <= 0:
 		endurance = 0
-	print(endurance)
 
 
 func _on_main_exp_for_player(job, exp):

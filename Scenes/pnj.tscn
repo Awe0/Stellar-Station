@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh78bt1svyotm"]
+[gd_scene load_steps=11 format=3 uid="uid://bh78bt1svyotm"]
 
 [ext_resource type="Script" path="res://Scripts/pnj.gd" id="1_la3bd"]
 [ext_resource type="Texture2D" uid="uid://dnq7l3fefjh1p" path="res://Assets/Sprites/Characters/space_cat.png" id="1_sue80"]
+[ext_resource type="PackedScene" uid="uid://jka6cn04c2xx" path="res://Scenes/UI/press_input.tscn" id="3_uqc8m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6u0b"]
 atlas = ExtResource("1_sue80")
@@ -66,5 +67,24 @@ shape = SubResource("CircleShape2D_qoy1q")
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_8onc2")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -75.0
+offset_right = 20.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PressInput" parent="HBoxContainer" instance=ExtResource("3_uqc8m")]
+layout_mode = 2
+size_flags_vertical = 0
+
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_entered" from="InteractionArea" to="HBoxContainer/PressInput" method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
+[connection signal="body_exited" from="InteractionArea" to="HBoxContainer/PressInput" method="_on_interaction_area_body_exited"]

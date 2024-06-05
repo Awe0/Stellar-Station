@@ -130,14 +130,25 @@ shape = SubResource("RectangleShape2D_knfcq")
 
 [node name="RespawnTimer" type="Timer" parent="."]
 
-[node name="PressInput" parent="." instance=ExtResource("21_3msf5")]
-offset_left = -45.0
-offset_top = -57.0
-offset_right = -45.0
-offset_bottom = -57.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -58.0
+offset_right = 20.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PressInput" parent="HBoxContainer" instance=ExtResource("21_3msf5")]
+layout_mode = 2
+size_flags_vertical = 0
 
 [connection signal="body_entered" from="CollactableZone" to="." method="_on_collactable_zone_body_entered"]
-[connection signal="body_entered" from="CollactableZone" to="PressInput" method="_on_collactable_zone_body_entered"]
+[connection signal="body_entered" from="CollactableZone" to="HBoxContainer/PressInput" method="_on_collactable_zone_body_entered"]
 [connection signal="body_exited" from="CollactableZone" to="." method="_on_collactable_zone_body_exited"]
-[connection signal="body_exited" from="CollactableZone" to="PressInput" method="_on_collactable_zone_body_exited"]
+[connection signal="body_exited" from="CollactableZone" to="HBoxContainer/PressInput" method="_on_collactable_zone_body_exited"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
