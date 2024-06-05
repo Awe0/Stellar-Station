@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://i2tmjqatadi"]
+[gd_scene load_steps=25 format=3 uid="uid://i2tmjqatadi"]
 
 [ext_resource type="Script" path="res://Scripts/minerals.gd" id="1_2u6xu"]
 [ext_resource type="Texture2D" uid="uid://dv3nful3du6d2" path="res://Assets/Sprites/Items/Minerals/Raw/Rock/rock1.png" id="1_82c1e"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dhper5cguah3e" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite7.png" id="14_sgblx"]
 [ext_resource type="Texture2D" uid="uid://pmuipladpxq4" path="res://Assets/Sprites/Items/Minerals/Raw/Malachite/malachite8.png" id="15_0l6ik"]
 [ext_resource type="Texture2D" uid="uid://bkfj6qebs5wa3" path="res://Assets/Sprites/block_error.png" id="16_f25de"]
+[ext_resource type="PackedScene" uid="uid://jka6cn04c2xx" path="res://Scenes/UI/press_input.tscn" id="21_3msf5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_24k4d"]
 animations = [{
@@ -129,6 +130,14 @@ shape = SubResource("RectangleShape2D_knfcq")
 
 [node name="RespawnTimer" type="Timer" parent="."]
 
+[node name="PressInput" parent="." instance=ExtResource("21_3msf5")]
+offset_left = -45.0
+offset_top = -57.0
+offset_right = -45.0
+offset_bottom = -57.0
+
 [connection signal="body_entered" from="CollactableZone" to="." method="_on_collactable_zone_body_entered"]
+[connection signal="body_entered" from="CollactableZone" to="PressInput" method="_on_collactable_zone_body_entered"]
 [connection signal="body_exited" from="CollactableZone" to="." method="_on_collactable_zone_body_exited"]
+[connection signal="body_exited" from="CollactableZone" to="PressInput" method="_on_collactable_zone_body_exited"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://crcr35007mj78"]
+[gd_scene load_steps=7 format=3 uid="uid://crcr35007mj78"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_gykvq"]
 [ext_resource type="PackedScene" uid="uid://b23w5st27dhm6" path="res://Scenes/player.tscn" id="3_o3wcb"]
 [ext_resource type="PackedScene" uid="uid://i2tmjqatadi" path="res://Scenes/minerals.tscn" id="4_kgiw0"]
 [ext_resource type="PackedScene" uid="uid://wb0yt5plc2rx" path="res://Scenes/UI/ui.tscn" id="5_f46hq"]
+[ext_resource type="PackedScene" uid="uid://jka6cn04c2xx" path="res://Scenes/UI/press_input.tscn" id="6_x771a"]
 [ext_resource type="PackedScene" uid="uid://bh78bt1svyotm" path="res://Scenes/pnj.tscn" id="6_yd2hw"]
 
 [node name="Main" type="Node2D"]
@@ -17,7 +18,7 @@ position = Vector2(570, 305)
 y_sort_enabled = true
 position = Vector2(571, 363)
 
-[node name="Minerals" parent="Minerals" instance=ExtResource("4_kgiw0")]
+[node name="rock" parent="Minerals" instance=ExtResource("4_kgiw0")]
 selected_animation = "rock"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -27,10 +28,16 @@ selected_animation = "rock"
 [node name="PNJ" parent="." instance=ExtResource("6_yd2hw")]
 position = Vector2(744, 264)
 
+[node name="PressInput" parent="." instance=ExtResource("6_x771a")]
+offset_left = 361.0
+offset_top = 372.0
+offset_right = 361.0
+offset_bottom = 372.0
+
 [connection signal="expForPlayer" from="." to="Player" method="_on_main_exp_for_player"]
 [connection signal="lootForUi" from="." to="CanvasLayer/Ui" method="_on_main_loot_for_ui"]
 [connection signal="enduranceChanged" from="Player" to="CanvasLayer/Ui" method="_on_player_endurance_changed"]
 [connection signal="experienceGained" from="Player" to="CanvasLayer/Ui" method="_on_player_experience_gained"]
 [connection signal="inputInteractionJustPressed" from="Player" to="PNJ" method="_on_player_input_interaction_just_pressed"]
 [connection signal="inputInventoryJustPressed" from="Player" to="CanvasLayer/Ui" method="_on_player_input_inventory_just_pressed"]
-[connection signal="destroyed" from="Minerals/Minerals" to="." method="_on_minerals_destroyed"]
+[connection signal="destroyed" from="Minerals/rock" to="." method="_on_minerals_destroyed"]
