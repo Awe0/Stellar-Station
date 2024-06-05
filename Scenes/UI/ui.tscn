@@ -295,8 +295,9 @@ tint_progress = Color(0.317647, 0, 0.317647, 1)
 script = ExtResource("5_5jm70")
 jobName = 2
 
-[node name="Control" parent="." instance=ExtResource("8_lgmc4")]
+[node name="Graduate_flask" parent="." instance=ExtResource("8_lgmc4")]
 layout_mode = 1
 
 [connection signal="addToSlot" from="." to="ItemBar/FullSlotBox" method="_on_ui_add_to_slot"]
+[connection signal="enduranceChanged" from="." to="Graduate_flask" method="_on_ui_endurance_changed"]
 [connection signal="experienceReceived" from="." to="LeftBox/ColorRect/ExpBox/MiningBar" method="_on_ui_experience_received"]

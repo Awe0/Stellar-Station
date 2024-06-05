@@ -1,7 +1,7 @@
 [gd_scene load_steps=45 format=3 uid="uid://c3sngj7q11nqg"]
 
 [ext_resource type="Texture2D" uid="uid://dxkbgwx5i1brg" path="res://Assets/Sprites/UI/graduate_flask.png" id="1_8vu3s"]
-[ext_resource type="Script" path="res://Scenes/UI/graduate_flask.gd" id="1_kh4vh"]
+[ext_resource type="Script" path="res://Scripts/graduate_flask.gd" id="1_xa75n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_62mkg"]
 atlas = ExtResource("1_8vu3s")
@@ -355,7 +355,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kh4vh")
+script = ExtResource("1_xa75n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(172.5, 177.5)
