@@ -1,5 +1,7 @@
 extends Node2D
 
+signal interaction()
+
 @onready var animation = $AnimatedSprite2D
 
 var playerOnRang: bool = false
@@ -23,4 +25,4 @@ func _on_interaction_area_body_exited(body):
 
 func _on_player_input_interaction_just_pressed():
 	if playerOnRang == true:
-		print("hello")
+		interaction.emit()

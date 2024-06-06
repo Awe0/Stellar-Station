@@ -57,3 +57,4 @@ offset_bottom = 372.0
 [connection signal="destroyed" from="Minerals/nothing" to="." method="_on_minerals_destroyed"]
 [connection signal="destroyed" from="Minerals/malachite" to="." method="_on_minerals_destroyed"]
 [connection signal="destroyed" from="Minerals/gold" to="." method="_on_minerals_destroyed"]
+[connection signal="interaction" from="PNJ" to="CanvasLayer/Ui" method="_on_pnj_interaction"]

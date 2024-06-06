@@ -5,6 +5,9 @@ signal addToSlot(count, item)
 signal enduranceChanged(enduranceAmount)
 
 @onready var leftBox = $LeftBox
+@onready var itemBar = $ItemBar
+@onready var dialogueWindow = $Dialogues
+@onready var graduateFlask = $Graduate_flask
 
 var leftBoxVisibility = false
 var itemNumber = 0
@@ -38,3 +41,8 @@ func _on_player_endurance_changed(enduranceAmount):
 func _on_main_loot_for_ui(count, item):
 	itemNumber += count
 	addToSlot.emit(itemNumber, item)
+
+
+func _on_pnj_interaction():
+	dialogueWindow.visible = true
+	itemBar.visible = false

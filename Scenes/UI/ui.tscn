@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://wb0yt5plc2rx"]
+[gd_scene load_steps=10 format=3 uid="uid://wb0yt5plc2rx"]
 
 [ext_resource type="Texture2D" uid="uid://bgjj0subxgefx" path="res://Assets/Sprites/UI/Slot.png" id="1_emkft"]
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="1_rakpa"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cxso4r38moay4" path="res://Assets/Sprites/UI/EmptyBar.png" id="4_ubc8o"]
 [ext_resource type="Script" path="res://Scripts/UI/expBar.gd" id="5_5jm70"]
 [ext_resource type="PackedScene" uid="uid://c3sngj7q11nqg" path="res://Scenes/UI/graduate_flask.tscn" id="8_lgmc4"]
+[ext_resource type="PackedScene" uid="uid://do21lh1dffy38" path="res://Scenes/UI/dialogues.tscn" id="9_hp8vv"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -296,6 +297,9 @@ script = ExtResource("5_5jm70")
 jobName = 2
 
 [node name="Graduate_flask" parent="." instance=ExtResource("8_lgmc4")]
+layout_mode = 1
+
+[node name="Dialogues" parent="." instance=ExtResource("9_hp8vv")]
 layout_mode = 1
 
 [connection signal="addToSlot" from="." to="ItemBar/FullSlotBox" method="_on_ui_add_to_slot"]
