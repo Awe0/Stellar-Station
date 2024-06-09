@@ -1,5 +1,6 @@
 extends Label
 
+var timeToDisappear: int = 5
 
 func _ready():
 	visible = false

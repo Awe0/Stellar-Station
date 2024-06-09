@@ -6,3 +6,5 @@
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("1_3dv0m")
+
+[node name="time_to_disappear" type="Timer" parent="."]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr3ofqj36syrh"
-path="res://.godot/imported/spacecat.png-c7a8822d58113451d00672ec9f5b50db.ctex"
+uid="uid://d07m12nltxs4"
+path="res://.godot/imported/space_cat_minia.png-633cd289e79333f7c333a32aeeee4499.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/spacecat.png"
-dest_files=["res://.godot/imported/spacecat.png-c7a8822d58113451d00672ec9f5b50db.ctex"]
+source_file="res://Assets/Sprites/Characters/space_cat_minia.png"
+dest_files=["res://.godot/imported/space_cat_minia.png-633cd289e79333f7c333a32aeeee4499.ctex"]
 
 [params]
 

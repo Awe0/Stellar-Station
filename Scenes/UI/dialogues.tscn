@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://do21lh1dffy38"]
+[gd_scene load_steps=3 format=3 uid="uid://do21lh1dffy38"]
 
 [ext_resource type="Script" path="res://Scripts/UI/dialogues.gd" id="1_hfa8p"]
+[ext_resource type="Texture2D" uid="uid://d07m12nltxs4" path="res://Assets/Sprites/Characters/space_cat_minia.png" id="2_2il7q"]
 
 [node name="Dialogues" type="Control"]
 layout_mode = 3
@@ -12,14 +13,31 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hfa8p")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Fond" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Fond"]
+layout_mode = 2
+size_flags_horizontal = 3
 color = Color(0.576471, 0, 0.635294, 0.533333)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(568, 954)
+[node name="Contenu" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Contenu"]
+layout_mode = 2
+texture = ExtResource("2_2il7q")
+expand_mode = 3

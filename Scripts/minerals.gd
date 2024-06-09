@@ -1,5 +1,6 @@
 extends Node2D
 signal destroyed(job, experience, count, items)
+
 @export_enum("nothing", "rock", "gold", "malachite") var selected_animation: String
 @export var job: String = "Mining"
 @export var experience: int = 10

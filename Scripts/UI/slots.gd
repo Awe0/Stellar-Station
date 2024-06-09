@@ -3,6 +3,11 @@ extends HBoxContainer
 var slotNumber: int = 1
 @onready var slot1 = $slot1
 @onready var slot2 = $slot2
+@onready var slot3 = $slot3
+@onready var slot4 = $slot4
+@onready var slot5 = $slot5
+@onready var slot6 = $slot6
+
 @onready var countSlot1 = $slot1/BoxContainer/CountSlot
 
 func _ready():
