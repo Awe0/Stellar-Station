@@ -48,10 +48,11 @@ radius = 11.0
 height = 22.0
 
 [node name="PNJ" type="Node2D"]
+position = Vector2(0, 16)
 script = ExtResource("1_la3bd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -20)
+position = Vector2(0, -28)
 sprite_frames = SubResource("SpriteFrames_sqsns")
 animation = &"idle"
 
