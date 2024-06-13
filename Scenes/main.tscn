@@ -18,21 +18,8 @@ position = Vector2(570, 305)
 y_sort_enabled = true
 position = Vector2(571, 363)
 
-[node name="rock" parent="Minerals" instance=ExtResource("4_kgiw0")]
-position = Vector2(8, 41)
-selected_animation = "rock"
-
-[node name="nothing" parent="Minerals" instance=ExtResource("4_kgiw0")]
-position = Vector2(-6, -153)
-selected_animation = "nothing"
-
 [node name="malachite" parent="Minerals" instance=ExtResource("4_kgiw0")]
-position = Vector2(74, -17)
 selected_animation = "malachite"
-
-[node name="gold" parent="Minerals" instance=ExtResource("4_kgiw0")]
-position = Vector2(-71, -13)
-selected_animation = "gold"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -49,8 +36,5 @@ position = Vector2(744, 264)
 [connection signal="experienceGained" from="Player" to="CanvasLayer/Ui" method="_on_player_experience_gained"]
 [connection signal="inputInteractionJustPressed" from="Player" to="PNJ" method="_on_player_input_interaction_just_pressed"]
 [connection signal="inputInventoryJustPressed" from="Player" to="CanvasLayer/Ui" method="_on_player_input_inventory_just_pressed"]
-[connection signal="destroyed" from="Minerals/rock" to="." method="_on_minerals_destroyed"]
-[connection signal="destroyed" from="Minerals/nothing" to="." method="_on_minerals_destroyed"]
 [connection signal="destroyed" from="Minerals/malachite" to="." method="_on_minerals_destroyed"]
-[connection signal="destroyed" from="Minerals/gold" to="." method="_on_minerals_destroyed"]
 [connection signal="interaction" from="PNJ" to="CanvasLayer/Ui" method="_on_pnj_interaction"]

@@ -591,7 +591,8 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_sukd7")
-slotBar = ExtResource("2_84pd4")
+endurance = 100
+itemBar = ExtResource("2_84pd4")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {

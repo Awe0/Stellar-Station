@@ -8,7 +8,7 @@ signal enduranceChanged(enduranceAmount)
 @onready var itemBar = $ItemBar
 @onready var dialogueWindow = $Dialogues
 @onready var graduateFlask = $Graduate_flask
-@onready var ItembarInventory : Inventory = preload("res://Resources/playerItemBar.tres")
+
 
 var leftBoxVisibility = false
 var itemNumber = 0

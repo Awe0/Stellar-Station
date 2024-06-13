@@ -6,10 +6,10 @@ signal destroyed(job, experience, count, items)
 @export var experience: int = 10
 @export var respawnTimer: int = 3
 @export var healthPoints: int = 10
+@export var itemResource : InventoryItem
 
 @onready var animation : AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer : Timer = $RespawnTimer
-@onready var itemResource : InventoryItem = InventoryItem.new("", null)
 
 var itemList: Array = ["nothing","rock", "gold", "malachite"]
 var playerOnRang: bool = false
@@ -20,14 +20,14 @@ var lootMin: int = 1
 
 func _ready():
 	displaySelectedAnimation()
-	configTheRightItem()
+	configTheRightItemLoot()
 
 func displaySelectedAnimation():
 	animation.play(selected_animation)
 
-func configTheRightItem():
-	itemResource.name = selected_animation
-	itemResource.texture = load("res://Assets/Sprites/Items/Minerals/Loots/"+ selected_animation +"_unit.png")
+func configTheRightItemLoot():
+	itemResource.set_path("res://Resources/Materials/"+ selected_animation +".tres")
+	print(itemResource.get_path())
 
 func _process(delta):
 	match healthPoints:
@@ -71,3 +71,6 @@ func _on_respawn_timer_timeout():
 
 func _on_ui_experience_received(growthData, jobLevels):
 	levelPlayer = jobLevels[job]
+
+func collect(inventory : Inventory):
+	inventory.insert(itemResource)

@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 signal levelUp(job)
 signal experienceGained(job, growthData, jobLevels)
 signal inputInventoryJustPressed()
@@ -8,9 +9,9 @@ signal enduranceChanged(enduranceAmount)
 @onready var animationTree = $AnimationTree
 @onready var animationSprite = $AnimatedSprite2D2
 
-@export var endurance: int = 100
+@export var endurance: int
 @export var speed: int = 200;
-@export var slotBar : Inventory
+@export var itemBar : Inventory
 
 var inputDirection : Vector2 = Vector2.ZERO
 var jobLevels: Dictionary = {
@@ -79,7 +80,6 @@ func enduranceGainOrLose(quantity):
 	enduranceChanged.emit(endurance)
 	if endurance <= 0:
 		endurance = 0
-
 
 func _on_main_exp_for_player(job, exp):
 	var enduQuantityLost: int = -5
