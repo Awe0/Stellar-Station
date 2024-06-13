@@ -1,7 +1,8 @@
-[gd_scene load_steps=47 format=3 uid="uid://b23w5st27dhm6"]
+[gd_scene load_steps=48 format=3 uid="uid://b23w5st27dhm6"]
 
 [ext_resource type="Texture2D" uid="uid://cv4yyepnc3utf" path="res://Assets/Sprites/Characters/Player/AnimationMovements/Idle_v1.png" id="1_c84ud"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_sukd7"]
+[ext_resource type="Resource" uid="uid://htl2vwxrh7xj" path="res://Resources/playerItemBar.tres" id="2_84pd4"]
 [ext_resource type="Texture2D" uid="uid://fxsi4kadctlq" path="res://Assets/Sprites/Characters/Player/AnimationMovements/WalkDiagonalUpLeft_v1.png" id="3_olwjb"]
 [ext_resource type="Texture2D" uid="uid://cyi44d1dhncce" path="res://Assets/Sprites/Characters/Player/AnimationMovements/WalkDiagonalUpRight_v1.png" id="4_7h6y3"]
 [ext_resource type="Texture2D" uid="uid://dwfiwqoih1ucj" path="res://Assets/Sprites/Characters/Player/AnimationMovements/WalkLeft_v1.png" id="5_qoj5g"]
@@ -590,6 +591,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_sukd7")
+slotBar = ExtResource("2_84pd4")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,4 +1,5 @@
 extends Node2D
+
 signal expForPlayer(job, exp)
 signal lootForUi(count, item)
 

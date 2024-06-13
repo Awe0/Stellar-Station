@@ -5,10 +5,12 @@ signal inputInventoryJustPressed()
 signal inputInteractionJustPressed()
 signal enduranceChanged(enduranceAmount)
 
-@export var endurance: int = 100
-@export var speed: int = 200;
 @onready var animationTree = $AnimationTree
 @onready var animationSprite = $AnimatedSprite2D2
+
+@export var endurance: int = 100
+@export var speed: int = 200;
+@export var slotBar : Inventory
 
 var inputDirection : Vector2 = Vector2.ZERO
 var jobLevels: Dictionary = {

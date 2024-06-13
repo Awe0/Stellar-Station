@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnng2e4ekvkmd"]
+
+[ext_resource type="PackedScene" uid="uid://dpqdrtbvuf8ga" path="res://Scenes/UI/slot.tscn" id="1_aosac"]
+
+[node name="ItemBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SlotBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -74.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 61
+alignment = 1
+
+[node name="Slot" parent="SlotBar" instance=ExtResource("1_aosac")]
+layout_mode = 2
+
+[node name="Slot2" parent="SlotBar" instance=ExtResource("1_aosac")]
+layout_mode = 2
+
+[node name="Slot3" parent="SlotBar" instance=ExtResource("1_aosac")]
+layout_mode = 2
+
+[node name="Slot4" parent="SlotBar" instance=ExtResource("1_aosac")]
+layout_mode = 2
+
+[node name="Slot5" parent="SlotBar" instance=ExtResource("1_aosac")]
+layout_mode = 2
+
+[node name="Slot6" parent="SlotBar" instance=ExtResource("1_aosac")]
+layout_mode = 2

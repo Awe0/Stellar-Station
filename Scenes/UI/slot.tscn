@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpqdrtbvuf8ga"]
+
+[ext_resource type="Texture2D" uid="uid://bgjj0subxgefx" path="res://Assets/Sprites/UI/Slot.png" id="1_6dqgn"]
+[ext_resource type="Script" path="res://Scripts/UI/slots.gd" id="1_t68vt"]
+
+[node name="Slot" type="Panel"]
+offset_right = 60.0
+offset_bottom = 60.0
+script = ExtResource("1_t68vt")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("1_6dqgn")
+
+[node name="item" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0

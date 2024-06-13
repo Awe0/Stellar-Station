@@ -1,12 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://wb0yt5plc2rx"]
+[gd_scene load_steps=8 format=3 uid="uid://wb0yt5plc2rx"]
 
-[ext_resource type="Texture2D" uid="uid://bgjj0subxgefx" path="res://Assets/Sprites/UI/Slot.png" id="1_emkft"]
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="1_rakpa"]
-[ext_resource type="Texture2D" uid="uid://ce2yxvs717tq1" path="res://Assets/Sprites/Items/EmptySlot.png" id="3_c6tai"]
 [ext_resource type="Texture2D" uid="uid://bcni11mf1eajx" path="res://Assets/Sprites/UI/FullBar.png" id="3_jvc6l"]
-[ext_resource type="Script" path="res://Scripts/UI/slots.gd" id="4_ii5u7"]
 [ext_resource type="Texture2D" uid="uid://cxso4r38moay4" path="res://Assets/Sprites/UI/EmptyBar.png" id="4_ubc8o"]
 [ext_resource type="Script" path="res://Scripts/UI/expBar.gd" id="5_5jm70"]
+[ext_resource type="PackedScene" uid="uid://cnng2e4ekvkmd" path="res://Scenes/UI/item_bar.tscn" id="7_pnfgw"]
 [ext_resource type="PackedScene" uid="uid://c3sngj7q11nqg" path="res://Scenes/UI/graduate_flask.tscn" id="8_lgmc4"]
 [ext_resource type="PackedScene" uid="uid://do21lh1dffy38" path="res://Scenes/UI/dialogues.tscn" id="9_hp8vv"]
 
@@ -18,177 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rakpa")
-
-[node name="ItemBar" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="EmptySlotBox" type="HBoxContainer" parent="ItemBar"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -55.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-
-[node name="slot1" type="TextureRect" parent="ItemBar/EmptySlotBox"]
-layout_mode = 2
-texture = ExtResource("1_emkft")
-expand_mode = 2
-
-[node name="slot2" type="TextureRect" parent="ItemBar/EmptySlotBox"]
-layout_mode = 2
-texture = ExtResource("1_emkft")
-expand_mode = 2
-
-[node name="slot3" type="TextureRect" parent="ItemBar/EmptySlotBox"]
-layout_mode = 2
-texture = ExtResource("1_emkft")
-expand_mode = 2
-
-[node name="slot4" type="TextureRect" parent="ItemBar/EmptySlotBox"]
-layout_mode = 2
-texture = ExtResource("1_emkft")
-expand_mode = 2
-
-[node name="slot5" type="TextureRect" parent="ItemBar/EmptySlotBox"]
-layout_mode = 2
-texture = ExtResource("1_emkft")
-expand_mode = 2
-
-[node name="slot6" type="TextureRect" parent="ItemBar/EmptySlotBox"]
-layout_mode = 2
-texture = ExtResource("1_emkft")
-expand_mode = 2
-
-[node name="FullSlotBox" type="HBoxContainer" parent="ItemBar"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -55.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-script = ExtResource("4_ii5u7")
-
-[node name="slot1" type="TextureRect" parent="ItemBar/FullSlotBox"]
-layout_mode = 2
-texture = ExtResource("3_c6tai")
-expand_mode = 2
-
-[node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.905
-anchor_bottom = 0.958
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 2
-
-[node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot1/BoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="slot2" type="TextureRect" parent="ItemBar/FullSlotBox"]
-layout_mode = 2
-texture = ExtResource("3_c6tai")
-expand_mode = 2
-
-[node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.905
-anchor_bottom = 0.958
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 2
-
-[node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot2/BoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="slot3" type="TextureRect" parent="ItemBar/FullSlotBox"]
-layout_mode = 2
-texture = ExtResource("3_c6tai")
-expand_mode = 2
-
-[node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot3"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.905
-anchor_bottom = 0.958
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 2
-
-[node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot3/BoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="slot4" type="TextureRect" parent="ItemBar/FullSlotBox"]
-layout_mode = 2
-texture = ExtResource("3_c6tai")
-expand_mode = 2
-
-[node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot4"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.905
-anchor_bottom = 0.958
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 2
-
-[node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot4/BoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="slot5" type="TextureRect" parent="ItemBar/FullSlotBox"]
-layout_mode = 2
-texture = ExtResource("3_c6tai")
-expand_mode = 2
-
-[node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot5"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.905
-anchor_bottom = 0.958
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 2
-
-[node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot5/BoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="slot6" type="TextureRect" parent="ItemBar/FullSlotBox"]
-layout_mode = 2
-texture = ExtResource("3_c6tai")
-expand_mode = 2
-
-[node name="BoxContainer" type="BoxContainer" parent="ItemBar/FullSlotBox/slot6"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.905
-anchor_bottom = 0.958
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 2
-
-[node name="CountSlot" type="Label" parent="ItemBar/FullSlotBox/slot6/BoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
 
 [node name="LeftBox" type="Control" parent="."]
 layout_mode = 1
@@ -302,6 +129,8 @@ layout_mode = 1
 [node name="Dialogues" parent="." instance=ExtResource("9_hp8vv")]
 layout_mode = 1
 
-[connection signal="addToSlot" from="." to="ItemBar/FullSlotBox" method="_on_ui_add_to_slot"]
+[node name="ItemBar" parent="." instance=ExtResource("7_pnfgw")]
+layout_mode = 1
+
 [connection signal="enduranceChanged" from="." to="Graduate_flask" method="_on_ui_endurance_changed"]
 [connection signal="experienceReceived" from="." to="LeftBox/ColorRect/ExpBox/MiningBar" method="_on_ui_experience_received"]

@@ -4,13 +4,14 @@ signal destroyed(job, experience, count, items)
 @export_enum("nothing", "rock", "gold", "malachite") var selected_animation: String
 @export var job: String = "Mining"
 @export var experience: int = 10
+@export var respawnTimer: int = 3
+@export var healthPoints: int = 10
 
-@onready var animation = $AnimatedSprite2D
-@onready var timer = $RespawnTimer
+@onready var animation : AnimatedSprite2D = $AnimatedSprite2D
+@onready var timer : Timer = $RespawnTimer
+@onready var itemResource : InventoryItem = InventoryItem.new("", null)
 
 var itemList: Array = ["nothing","rock", "gold", "malachite"]
-var respawnTimer: int = 3
-var healthPoints: int = 10
 var playerOnRang: bool = false
 var wasOnFrameTwo: bool = false
 var levelPlayer: int = 0 
@@ -18,11 +19,15 @@ var lootMax: int = 3
 var lootMin: int = 1
 
 func _ready():
-	display_selected_animation()
+	displaySelectedAnimation()
+	configTheRightItem()
 
-func display_selected_animation():
+func displaySelectedAnimation():
 	animation.play(selected_animation)
 
+func configTheRightItem():
+	itemResource.name = selected_animation
+	itemResource.texture = load("res://Assets/Sprites/Items/Minerals/Loots/"+ selected_animation +"_unit.png")
 
 func _process(delta):
 	match healthPoints:

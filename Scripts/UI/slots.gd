@@ -1,14 +1,7 @@
-extends HBoxContainer
+extends Panel
 
-var slotNumber: int = 1
-@onready var slot1 = $slot1
-@onready var slot2 = $slot2
-@onready var slot3 = $slot3
-@onready var slot4 = $slot4
-@onready var slot5 = $slot5
-@onready var slot6 = $slot6
-
-@onready var countSlot1 = $slot1/BoxContainer/CountSlot
+@onready var backgroundTexture : TextureRect = $background
+@onready var itemTexture : TextureRect = $item
 
 func _ready():
 	pass
@@ -16,11 +9,3 @@ func _ready():
 
 func _process(delta):
 	pass
-
-
-func _on_ui_add_to_slot(count, item):
-	if item == "gold":
-		slot1.texture = load("res://Assets/Sprites/Items/Minerals/Loots/"+ item +"_unit.png")
-	else:
-		slot2.texture = load("res://Assets/Sprites/Items/Minerals/Loots/"+ item +"_unit.png")
-	countSlot1.text = str(count)

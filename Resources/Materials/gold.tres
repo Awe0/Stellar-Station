@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://1akhn531ulfs"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory/inventoryItem.gd" id="1_4lf5o"]
-[ext_resource type="Texture2D" uid="uid://cg5spquo4w1qi" path="res://Assets/Sprites/Items/Minerals/Loots/gold_unit.png" id="2_68jtv"]
+[ext_resource type="Script" path="res://Scripts/Inventory/inventoryItem.gd" id="1_8e1mu"]
+[ext_resource type="Texture2D" uid="uid://cg5spquo4w1qi" path="res://Assets/Sprites/Items/Minerals/Loots/gold_unit.png" id="2_12f52"]
 
 [resource]
-script = ExtResource("1_4lf5o")
+script = ExtResource("1_8e1mu")
 name = "gold"
-texture = ExtResource("2_68jtv")
+texture = ExtResource("2_12f52")
