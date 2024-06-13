@@ -149,7 +149,6 @@ grow_vertical = 0
 layout_mode = 2
 size_flags_vertical = 0
 
-[connection signal="destroyed" from="." to="." method="_on_destroyed"]
 [connection signal="body_entered" from="CollactableZone" to="." method="_on_collactable_zone_body_entered"]
 [connection signal="body_entered" from="CollactableZone" to="HBoxContainer/PressInput" method="_on_collactable_zone_body_entered"]
 [connection signal="body_exited" from="CollactableZone" to="." method="_on_collactable_zone_body_exited"]

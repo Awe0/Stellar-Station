@@ -1,5 +1,4 @@
 extends Node2D
-signal destroyed(job, experience, count, items)
 
 @export_enum("nothing", "rock", "gold", "malachite") var selected_animation: String
 @export var job: String = "Mining"
@@ -45,7 +44,7 @@ func _process(delta):
 				var amountOfLoot = randi_range(lootMin,lootMax)
 				for item in itemList:
 					if item == current_animation:
-						destroyed.emit(job,experience, amountOfLoot, item)
+						EventBus.destroyed.emit(job,experience, amountOfLoot, item)
 						wasOnFrameTwo = false
 	
 	if playerOnRang == true:
@@ -74,3 +73,4 @@ func _on_ui_experience_received(growthData, jobLevels):
 
 func collect(inventory : Inventory):
 	inventory.insert(itemResource)
+
