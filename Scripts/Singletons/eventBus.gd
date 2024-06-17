@@ -1,3 +1,3 @@
 extends Node
 
-signal destroyed(job, experience, count, items)
+signal destroyed(job : String, experience : int, count : int, item : InventoryItem)

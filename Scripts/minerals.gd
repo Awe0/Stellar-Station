@@ -19,14 +19,13 @@ var lootMin: int = 1
 
 func _ready():
 	displaySelectedAnimation()
-	configTheRightItemLoot()
+	#configTheRightItemLoot()
 
 func displaySelectedAnimation():
 	animation.play(selected_animation)
 
 func configTheRightItemLoot():
 	itemResource.set_path("res://Resources/Materials/"+ selected_animation +".tres")
-	print(itemResource.get_path())
 
 func _process(delta):
 	match healthPoints:
@@ -44,7 +43,7 @@ func _process(delta):
 				var amountOfLoot = randi_range(lootMin,lootMax)
 				for item in itemList:
 					if item == current_animation:
-						EventBus.destroyed.emit(job,experience, amountOfLoot, item)
+						EventBus.destroyed.emit(job,experience, amountOfLoot, itemResource)
 						wasOnFrameTwo = false
 	
 	if playerOnRang == true:
@@ -71,6 +70,4 @@ func _on_respawn_timer_timeout():
 func _on_ui_experience_received(growthData, jobLevels):
 	levelPlayer = jobLevels[job]
 
-func collect(inventory : Inventory):
-	inventory.insert(itemResource)
 

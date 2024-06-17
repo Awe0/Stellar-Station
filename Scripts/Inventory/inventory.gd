@@ -2,10 +2,21 @@ extends Resource
 
 class_name Inventory
 
-@export var items : Array[InventoryItem]
+signal updated
 
-func insert(item : InventoryItem):
-	for i in range(items.size()):
-		if !items[i]:
-			items[i] = item
-			break
+@export var slots : Array[InventorySlot]
+
+func insert(item : InventoryItem, amountOfLoot : int):
+	for slot in slots:
+		if slot.item == item:
+			slot.amount += amountOfLoot
+			updated.emit()
+			return
+
+	for i in range(slots.size()):
+		if !slots[i].item:
+			slots[i].item = item
+			slots[i].amount = amountOfLoot
+			updated.emit()
+			return
+

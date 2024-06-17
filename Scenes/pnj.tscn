@@ -55,14 +55,17 @@ script = ExtResource("1_la3bd")
 position = Vector2(0, -28)
 sprite_frames = SubResource("SpriteFrames_sqsns")
 animation = &"idle"
+frame_progress = 0.744629
 
 [node name="InteractionArea" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_qoy1q")
 
 [node name="CollisionArea" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
 position = Vector2(0, 1)

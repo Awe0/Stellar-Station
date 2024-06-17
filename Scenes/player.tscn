@@ -592,6 +592,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_sukd7")
 endurance = 100
+speed = null
 itemBar = ExtResource("2_84pd4")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
@@ -611,6 +612,7 @@ texture_filter = 1
 position = Vector2(0, -27)
 sprite_frames = SubResource("SpriteFrames_x3g2h")
 animation = &"Idle"
+frame_progress = 0.64051
 
 [node name="Camera2D2" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

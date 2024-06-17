@@ -42,7 +42,6 @@ func _on_main_loot_for_ui(count, item):
 	itemNumber += count
 	addToSlot.emit(itemNumber, item)
 
-
 func _on_pnj_interaction():
 	dialogueWindow.visible = true
 	itemBar.visible = false

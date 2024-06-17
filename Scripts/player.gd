@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-signal levelUp(job)
-signal experienceGained(job, growthData, jobLevels)
+signal levelUp(job : String)
+signal experienceGained(job : String, growthData, jobLevels)
 signal inputInventoryJustPressed()
 signal inputInteractionJustPressed()
-signal enduranceChanged(enduranceAmount)
+signal enduranceChanged(enduranceAmount : int)
 
 @onready var animationTree = $AnimationTree
 @onready var animationSprite = $AnimatedSprite2D2
@@ -28,17 +28,18 @@ var jobExperience: Dictionary = {
 }
 
 func _ready():
+	EventBus.destroyed.connect(mineralsDestroyed)
 	pass
 
 func _physics_process(delta):
 	inputDirection = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = inputDirection * speed
 	animation_sprite(inputDirection)
-	toggleInventory()
 	toggleInteraction()
+	toggleInventory()
 	move_and_slide()
 
-func animation_sprite(direction):
+func animation_sprite(direction : Vector2):
 	if direction == Vector2.ZERO :
 		animationSprite.play("Idle")
 	elif direction.x > 0 :
@@ -50,7 +51,7 @@ func animation_sprite(direction):
 	elif direction.y < 0 :
 		animationSprite.play("WalkUp")
 
-func get_required_experience(level):
+func get_required_experience(level : int):
 	return round(pow(level, 2)+level*20)
 
 func gain_experience(job,amount):
@@ -81,7 +82,8 @@ func enduranceGainOrLose(quantity):
 	if endurance <= 0:
 		endurance = 0
 
-func _on_main_exp_for_player(job, exp):
+func mineralsDestroyed(job : String, exp : int, amountOfLoot : int, item : InventoryItem):
 	var enduQuantityLost: int = -5
+	itemBar.insert(item, amountOfLoot)
 	enduranceGainOrLose(enduQuantityLost)
 	gain_experience(job, exp)
