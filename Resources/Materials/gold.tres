@@ -7,3 +7,6 @@
 script = ExtResource("1_8e1mu")
 name = "gold"
 texture = ExtResource("2_12f52")
+lootMax = 1
+lootMin = 4
+stackMax = 0

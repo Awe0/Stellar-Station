@@ -6,7 +6,8 @@ signal updated
 
 @export var slots : Array[InventorySlot]
 
-func insert(item : InventoryItem, amountOfLoot : int):
+func insert(item : InventoryItem):
+	var amountOfLoot = item.amountOfLoot()
 	for slot in slots:
 		if slot.item == item:
 			slot.amount += amountOfLoot

@@ -14,17 +14,15 @@ var itemList: Array = ["nothing","rock", "gold", "malachite"]
 var playerOnRang: bool = false
 var wasOnFrameTwo: bool = false
 var levelPlayer: int = 0 
-var lootMax: int = 3
-var lootMin: int = 1
 
 func _ready():
 	displaySelectedAnimation()
-	#configTheRightItemLoot()
+	#configTheRightItemLoot() # NOT USED #
 
 func displaySelectedAnimation():
 	animation.play(selected_animation)
 
-func configTheRightItemLoot():
+func configTheRightItemLoot(): # NOT USED #
 	itemResource.set_path("res://Resources/Materials/"+ selected_animation +".tres")
 
 func _process(delta):
@@ -40,10 +38,9 @@ func _process(delta):
 			if wasOnFrameTwo:
 				animation.play()
 				var current_animation = animation.animation
-				var amountOfLoot = randi_range(lootMin,lootMax)
 				for item in itemList:
 					if item == current_animation:
-						EventBus.destroyed.emit(job,experience, amountOfLoot, itemResource)
+						EventBus.destroyed.emit(job,experience, itemResource)
 						wasOnFrameTwo = false
 	
 	if playerOnRang == true:

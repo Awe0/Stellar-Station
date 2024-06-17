@@ -82,8 +82,8 @@ func enduranceGainOrLose(quantity):
 	if endurance <= 0:
 		endurance = 0
 
-func mineralsDestroyed(job : String, exp : int, amountOfLoot : int, item : InventoryItem):
+func mineralsDestroyed(job : String, exp : int, item : InventoryItem):
 	var enduQuantityLost: int = -5
-	itemBar.insert(item, amountOfLoot)
+	itemBar.insert(item)
 	enduranceGainOrLose(enduQuantityLost)
 	gain_experience(job, exp)

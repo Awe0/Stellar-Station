@@ -7,3 +7,6 @@
 script = ExtResource("1_rec5f")
 name = "malachite"
 texture = ExtResource("2_lk2r6")
+lootMax = 1
+lootMin = 3
+stackMax = 0
