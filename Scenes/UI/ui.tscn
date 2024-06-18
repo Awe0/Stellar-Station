@@ -132,5 +132,6 @@ layout_mode = 1
 [node name="ItemBar" parent="." instance=ExtResource("7_pnfgw")]
 layout_mode = 1
 
+[connection signal="dialWindowOpen" from="." to="Dialogues" method="_on_ui_dial_window_open"]
 [connection signal="enduranceChanged" from="." to="Graduate_flask" method="_on_ui_endurance_changed"]
 [connection signal="experienceReceived" from="." to="LeftBox/ColorRect/ExpBox/MiningBar" method="_on_ui_experience_received"]

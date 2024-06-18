@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh78bt1svyotm"]
+[gd_scene load_steps=12 format=3 uid="uid://bh78bt1svyotm"]
 
 [ext_resource type="Script" path="res://Scripts/pnj.gd" id="1_la3bd"]
 [ext_resource type="Texture2D" uid="uid://dnq7l3fefjh1p" path="res://Assets/Sprites/Characters/space_cat.png" id="1_sue80"]
+[ext_resource type="Texture2D" uid="uid://bkfj6qebs5wa3" path="res://Assets/Sprites/block_error.png" id="2_8mwut"]
 [ext_resource type="PackedScene" uid="uid://jka6cn04c2xx" path="res://Scenes/UI/press_input.tscn" id="3_uqc8m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6u0b"]
@@ -24,6 +25,14 @@ region = Rect2(192, 64, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_8mwut")
+}],
+"loop": true,
+"name": &"nobody",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_d6u0b")
 }, {
 "duration": 1.0,
@@ -36,7 +45,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_r2ujr")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"spaceCat",
 "speed": 6.0
 }]
 
@@ -54,18 +63,15 @@ script = ExtResource("1_la3bd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -28)
 sprite_frames = SubResource("SpriteFrames_sqsns")
-animation = &"idle"
-frame_progress = 0.744629
+animation = &"nobody"
 
 [node name="InteractionArea" type="Area2D" parent="."]
-visible = false
 position = Vector2(0, -20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_qoy1q")
 
 [node name="CollisionArea" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
 position = Vector2(0, 1)

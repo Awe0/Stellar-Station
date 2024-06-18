@@ -41,3 +41,16 @@ grow_vertical = 2
 layout_mode = 2
 texture = ExtResource("2_2il7q")
 expand_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.322
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Dial" type="Label" parent="HBoxContainer"]
+layout_mode = 2

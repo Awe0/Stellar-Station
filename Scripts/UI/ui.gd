@@ -1,8 +1,8 @@
 extends Control
 
 signal experienceReceived(growthData, jobLevels)
-signal addToSlot(count, item)
 signal enduranceChanged(enduranceAmount)
+signal dialWindowOpen()
 
 @onready var leftBox = $LeftBox
 @onready var itemBar = $ItemBar
@@ -11,7 +11,6 @@ signal enduranceChanged(enduranceAmount)
 
 
 var leftBoxVisibility = false
-var itemNumber = 0
 
 
 func _ready():
@@ -33,15 +32,10 @@ func _on_player_input_inventory_just_pressed():
 func _on_player_experience_gained(growthData, jobLevels):
 	experienceReceived.emit(growthData, jobLevels)
 
-
-func _on_player_endurance_changed(enduranceAmount):
+func _on_player_endurance_changed(enduranceAmount : int):
 	enduranceChanged.emit(enduranceAmount)
 
-
-func _on_main_loot_for_ui(count, item):
-	itemNumber += count
-	addToSlot.emit(itemNumber, item)
-
-func _on_pnj_interaction():
+func _on_pnj_interaction(who : String):
 	dialogueWindow.visible = true
 	itemBar.visible = false
+	dialWindowOpen.emit(who)
