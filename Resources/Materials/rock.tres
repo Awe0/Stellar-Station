@@ -7,6 +7,6 @@
 script = ExtResource("1_p1tb0")
 name = "rock"
 texture = ExtResource("2_v8sle")
-lootMax = 1
+lootMax = 6
 lootMin = 6
-stackMax = 0
+isStackable = true

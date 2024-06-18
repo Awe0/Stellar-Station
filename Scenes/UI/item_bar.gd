@@ -4,8 +4,8 @@ extends Control
 @onready var slots : Array = $SlotBar.get_children()
 
 func _ready():
-	itemBarInventory.updated.connect(update)
 	update()
+	itemBarInventory.updated.connect(update)
 
 func update():
 	for i in range(min(itemBarInventory.slots.size(), slots.size())):
