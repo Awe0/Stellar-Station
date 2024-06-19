@@ -1,4 +1,9 @@
 {
-  "nobody": "ERROR : Nobody's talking with you ! ",
-  "spaceCat": "Hello World"
+  "pnjs" : [{
+    "name": "nobody",
+    "dialogues": "ERROR : Nobody's talking with you ! "
+  },{
+    "name": "SpaceCat",
+    "dialogues": "Hello World"
+  }]
 }

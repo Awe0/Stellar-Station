@@ -15,7 +15,7 @@ y_sort_enabled = true
 script = ExtResource("1_gykvq")
 
 [node name="Player" parent="." instance=ExtResource("3_o3wcb")]
-position = Vector2(1083, 524)
+position = Vector2(819, 265)
 
 [node name="Minerals" type="Node2D" parent="."]
 y_sort_enabled = true

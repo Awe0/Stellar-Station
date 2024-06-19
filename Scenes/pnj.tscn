@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bh78bt1svyotm"]
 
-[ext_resource type="Script" path="res://Scripts/pnj.gd" id="1_la3bd"]
+[ext_resource type="Script" path="res://Scripts/Pnjs/pnjs.gd" id="1_2qvdo"]
 [ext_resource type="Texture2D" uid="uid://dnq7l3fefjh1p" path="res://Assets/Sprites/Characters/space_cat.png" id="1_sue80"]
 [ext_resource type="Texture2D" uid="uid://bkfj6qebs5wa3" path="res://Assets/Sprites/block_error.png" id="2_8mwut"]
 [ext_resource type="PackedScene" uid="uid://jka6cn04c2xx" path="res://Scenes/UI/press_input.tscn" id="3_uqc8m"]
@@ -58,7 +58,7 @@ height = 22.0
 
 [node name="PNJ" type="Node2D"]
 position = Vector2(0, 16)
-script = ExtResource("1_la3bd")
+script = ExtResource("1_2qvdo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -28)

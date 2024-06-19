@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*res://Scripts/Singletons/eventBus.gd"
-PnjsDial="*res://Scripts/Singletons/PnjsDial.gd"
 
 [display]
 

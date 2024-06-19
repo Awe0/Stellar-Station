@@ -11,8 +11,4 @@ func _process(delta):
 
 
 func _on_ui_dial_window_open(who : String):
-	for key in PnjsDial.itemData:
-		var value = PnjsDial.itemData[key]
-		for i in value:
-			if who == i:
-				dialogues.text = PnjsDial.itemData[i]
+	pass
