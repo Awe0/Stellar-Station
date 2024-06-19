@@ -2,7 +2,7 @@ extends Control
 
 signal experienceReceived(growthData, jobLevels)
 signal enduranceChanged(enduranceAmount)
-signal dialWindowOpen()
+signal dialWindowOpen(who : Object)
 
 @onready var leftBox = $LeftBox
 @onready var itemBar = $ItemBar
@@ -35,7 +35,7 @@ func _on_player_experience_gained(growthData, jobLevels):
 func _on_player_endurance_changed(enduranceAmount : int):
 	enduranceChanged.emit(enduranceAmount)
 
-func _on_pnj_interaction(who : String):
+func _on_npc_interaction(who : Object):
 	dialogueWindow.visible = true
 	itemBar.visible = false
 	dialWindowOpen.emit(who)
