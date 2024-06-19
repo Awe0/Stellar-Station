@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bh78bt1svyotm"]
 
-[ext_resource type="Script" path="res://Scripts/Pnjs/pnjs.gd" id="1_2qvdo"]
+[ext_resource type="Script" path="res://Scripts/Npcs/npcs.gd" id="1_2qvdo"]
 [ext_resource type="Texture2D" uid="uid://dnq7l3fefjh1p" path="res://Assets/Sprites/Characters/space_cat.png" id="1_sue80"]
 [ext_resource type="Texture2D" uid="uid://bkfj6qebs5wa3" path="res://Assets/Sprites/block_error.png" id="2_8mwut"]
 [ext_resource type="PackedScene" uid="uid://jka6cn04c2xx" path="res://Scenes/UI/press_input.tscn" id="3_uqc8m"]
@@ -25,14 +25,6 @@ region = Rect2(192, 64, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8mwut")
-}],
-"loop": true,
-"name": &"nobody",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_d6u0b")
 }, {
 "duration": 1.0,
@@ -45,8 +37,16 @@ animations = [{
 "texture": SubResource("AtlasTexture_r2ujr")
 }],
 "loop": true,
-"name": &"spaceCat",
+"name": &"SpaceCat",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8mwut")
+}],
+"loop": true,
+"name": &"nobody",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qoy1q"]
@@ -56,14 +56,14 @@ radius = 52.6118
 radius = 11.0
 height = 22.0
 
-[node name="PNJ" type="Node2D"]
+[node name="NPC" type="Node2D"]
 position = Vector2(0, 16)
 script = ExtResource("1_2qvdo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -28)
 sprite_frames = SubResource("SpriteFrames_sqsns")
-animation = &"nobody"
+animation = &"SpaceCat"
 
 [node name="InteractionArea" type="Area2D" parent="."]
 position = Vector2(0, -20)
