@@ -1,11 +1,4 @@
-extends Node
-
-var dataFilePath : String = "res://PNJsDial.json"
-var itemData = {}
-
-
-func _ready():
-	itemData = load_json_file(dataFilePath)
+class_name DataLoader
 
 func load_json_file(filePath : String):
 	if FileAccess.file_exists(filePath):
