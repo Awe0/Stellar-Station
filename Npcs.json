@@ -1,9 +1,0 @@
-{
-  "pnjs" : [{
-	"name": "nobody",
-	"dialogues": "ERROR : Nobody's talking with you ! "
-  },{
-	"name": "SpaceCat",
-	"dialogues": "Hello, I'm Space Cat"
-  }]
-}

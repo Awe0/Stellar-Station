@@ -7,7 +7,7 @@ func _ready():
 
 func loadNpcs():
 	var npcs :Array
-	var dataFilePath : String = "res://Npcs.json"
+	var dataFilePath : String = "res://Datas/Npcs.json"
 	var loadDatas : Object = DataLoader.new()
 	var npcsData : Dictionary = loadDatas.load_json_file(dataFilePath)
 	for key in npcsData:
