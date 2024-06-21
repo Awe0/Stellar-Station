@@ -6,7 +6,7 @@ signal interaction(who : Object)
 
 @onready var animation = $AnimatedSprite2D
 
-var playerOnRang : bool = false
+var playerOnRange : bool = false
 var whichNpcIs : Object
 
 func _ready():
@@ -18,16 +18,18 @@ func displaySelectedAnimation():
 
 func _on_interaction_area_body_entered(body):
 	if body.is_in_group("player"):
-		playerOnRang = true
+		playerOnRange = true
 
 func _on_interaction_area_body_exited(body):
-	playerOnRang = false
+	if body.is_in_group("player"):
+		playerOnRange = false
 
 func _on_player_input_interaction_just_pressed():
-	if playerOnRang == true:
+	if playerOnRange == true:
 		interaction.emit(whichNpcIs)
 
 func takeTheRightNpc():
 	for npc in NpcsInstance.npcs:
 		if selected_animation == npc.pnjsName:
 			return npc
+

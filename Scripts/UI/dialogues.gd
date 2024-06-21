@@ -11,5 +11,5 @@ func _process(delta):
 
 
 func _on_ui_dial_window_open(who : Object):
-	print("Hello from dial")
+	print(who)
 	dialogues.text = who.dialogues

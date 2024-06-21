@@ -36,6 +36,10 @@ func _on_player_endurance_changed(enduranceAmount : int):
 	enduranceChanged.emit(enduranceAmount)
 
 func _on_npc_interaction(who : Object):
-	dialogueWindow.visible = true
-	itemBar.visible = false
-	dialWindowOpen.emit(who)
+	if dialogueWindow.visible == false:
+		dialogueWindow.visible = true
+		itemBar.visible = false
+		dialWindowOpen.emit(who)
+	else:
+		dialogueWindow.visible = false
+		itemBar.visible = true
