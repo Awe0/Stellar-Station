@@ -32,7 +32,22 @@ selected_animation = "gold"
 itemResource = ExtResource("5_l6lte")
 
 [node name="rock" parent="Minerals" instance=ExtResource("4_kgiw0")]
-position = Vector2(448, -3)
+position = Vector2(479, 1)
+selected_animation = "rock"
+itemResource = ExtResource("6_8er8k")
+
+[node name="rock2" parent="Minerals" instance=ExtResource("4_kgiw0")]
+position = Vector2(455, -53)
+selected_animation = "rock"
+itemResource = ExtResource("6_8er8k")
+
+[node name="rock3" parent="Minerals" instance=ExtResource("4_kgiw0")]
+position = Vector2(539, -25)
+selected_animation = "rock"
+itemResource = ExtResource("6_8er8k")
+
+[node name="rock4" parent="Minerals" instance=ExtResource("4_kgiw0")]
+position = Vector2(516, -86)
 selected_animation = "rock"
 itemResource = ExtResource("6_8er8k")
 
