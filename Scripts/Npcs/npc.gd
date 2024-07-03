@@ -1,10 +1,10 @@
 extends Node
 
-class_name Pnj
+class_name Npc
 
-var pnjsName : String
+var npcsName : String
 var dialogues : String
 
 func _init(dict : Dictionary):
-	pnjsName = dict["name"]
+	npcsName = dict["name"]
 	dialogues = dict["dialogues"]

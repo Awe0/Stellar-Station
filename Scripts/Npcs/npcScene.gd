@@ -30,6 +30,6 @@ func _on_player_input_interaction_just_pressed():
 
 func takeTheRightNpc():
 	for npc in NpcsInstance.npcs:
-		if selected_animation == npc.pnjsName:
+		if selected_animation == npc.npcsName:
 			return npc
 

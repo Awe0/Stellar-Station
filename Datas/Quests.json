@@ -1,1 +1,13 @@
-null
+{
+  "quests" : [{
+	"id": 0,
+	"name": "Space Cat requests",
+	"description": "Space Cat needs 5 rocks",
+	"objective": "Bring 5 rocks to Space Cat"
+  },{
+	"id": 1,
+	"name": "ERROR : Nobody's talking with you ! ",
+	"description": "Do nothing",
+	"objective": "Nothing"
+  }]
+}
