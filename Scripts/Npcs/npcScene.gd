@@ -33,3 +33,6 @@ func takeTheRightNpc():
 		if selected_animation == npc.npcsName:
 			return npc
 
+func assignQuests():
+	pass
+
