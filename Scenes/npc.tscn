@@ -25,6 +25,14 @@ region = Rect2(192, 64, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_8mwut")
+}],
+"loop": true,
+"name": &"Nobody",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_d6u0b")
 }, {
 "duration": 1.0,
@@ -39,14 +47,6 @@ animations = [{
 "loop": true,
 "name": &"SpaceCat",
 "speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_8mwut")
-}],
-"loop": true,
-"name": &"nobody",
-"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qoy1q"]
@@ -63,7 +63,7 @@ script = ExtResource("1_2qvdo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -28)
 sprite_frames = SubResource("SpriteFrames_sqsns")
-animation = &"SpaceCat"
+animation = &"Nobody"
 
 [node name="InteractionArea" type="Area2D" parent="."]
 position = Vector2(0, -20)

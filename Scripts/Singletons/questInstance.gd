@@ -5,7 +5,6 @@ var quests : Array
 
 func _ready():
 	quests = loadQuests()
-	print(quests)
 
 func loadQuests():
 	var quests :Array

@@ -2,7 +2,7 @@ extends Node2D
 
 signal interaction(who : Object)
 
-@export_enum("nobody", "SpaceCat") var selected_animation: String
+@export_enum("Nobody", "SpaceCat") var selected_animation: String
 
 @onready var animation = $AnimatedSprite2D
 
@@ -12,6 +12,7 @@ var whichNpcIs : Object
 func _ready():
 	displaySelectedAnimation()
 	whichNpcIs = takeTheRightNpc()
+	whichNpcIs.assignQuests()
 
 func displaySelectedAnimation():
 	animation.play(selected_animation)
@@ -30,9 +31,8 @@ func _on_player_input_interaction_just_pressed():
 
 func takeTheRightNpc():
 	for npc in NpcsInstance.npcs:
-		if selected_animation == npc.npcsName:
+		if selected_animation == npc.npcName:
 			return npc
 
-func assignQuests():
-	pass
+
 
