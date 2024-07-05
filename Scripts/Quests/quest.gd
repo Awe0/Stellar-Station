@@ -11,6 +11,8 @@ var questName : String
 var givenBy : String
 var description : String
 var objective : String
+var startCondition : Array
+var endCondition : Array
 
 func _init(dict : Dictionary):
 	id = dict["id"]
@@ -18,6 +20,8 @@ func _init(dict : Dictionary):
 	givenBy = dict["givenBy"]
 	description = dict["description"]
 	objective = dict["objective"] 
+	startCondition = dict["startCondition"] 
+	endCondition = dict["endCondition"]
 
 func start():
 	started.emit()
@@ -27,3 +31,6 @@ func update():
 
 func complet():
 	completed.emit()
+
+func checkStartCondition():
+	pass

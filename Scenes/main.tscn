@@ -64,14 +64,14 @@ layer_0/tile_data = PackedInt32Array(1, 1, 9, 2, 65537, 9, 3, 131073, 9, 4, 1966
 position = Vector2(743, 220)
 selected_animation = "SpaceCat"
 
-[node name="nobody" parent="Npcs" instance=ExtResource("6_yd2hw")]
+[node name="Nobody" parent="Npcs" instance=ExtResource("6_yd2hw")]
 position = Vector2(984, 241)
 selected_animation = "nobody"
 
 [connection signal="enduranceChanged" from="Player" to="CanvasLayer/Ui" method="_on_player_endurance_changed"]
 [connection signal="experienceGained" from="Player" to="CanvasLayer/Ui" method="_on_player_experience_gained"]
 [connection signal="inputInteractionJustPressed" from="Player" to="Npcs/SpaceCat" method="_on_player_input_interaction_just_pressed"]
-[connection signal="inputInteractionJustPressed" from="Player" to="Npcs/nobody" method="_on_player_input_interaction_just_pressed"]
+[connection signal="inputInteractionJustPressed" from="Player" to="Npcs/Nobody" method="_on_player_input_interaction_just_pressed"]
 [connection signal="inputInventoryJustPressed" from="Player" to="CanvasLayer/Ui" method="_on_player_input_inventory_just_pressed"]
 [connection signal="interaction" from="Npcs/SpaceCat" to="CanvasLayer/Ui" method="_on_npc_interaction"]
-[connection signal="interaction" from="Npcs/nobody" to="CanvasLayer/Ui" method="_on_npc_interaction"]
+[connection signal="interaction" from="Npcs/Nobody" to="CanvasLayer/Ui" method="_on_npc_interaction"]

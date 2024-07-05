@@ -43,3 +43,4 @@ func _on_npc_interaction(who : Object):
 	else:
 		dialogueWindow.visible = false
 		itemBar.visible = true
+

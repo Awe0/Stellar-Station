@@ -4,14 +4,10 @@ class_name Npc
 
 var npcName : String
 var dialogues : String
+var questsId : Array
 var quests : Array
 
 func _init(dict : Dictionary):
 	npcName = dict["name"]
+	questsId = dict["questsId"]
 
-func assignQuests():
-	for i in QuestsInstance.quests:
-		print(QuestsInstance.quests[i])
-		if QuestsInstance.quests[i].givenBy == npcName:
-			quests.append(QuestsInstance.quests[i])
-			print("Hello from NPC CLASS")

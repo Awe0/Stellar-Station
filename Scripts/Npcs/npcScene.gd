@@ -11,8 +11,8 @@ var whichNpcIs : Object
 
 func _ready():
 	displaySelectedAnimation()
-	whichNpcIs = takeTheRightNpc()
-	whichNpcIs.assignQuests()
+	whichNpcIs = defineTheRightNpc()
+	print(whichNpcIs.questsId)
 
 func displaySelectedAnimation():
 	animation.play(selected_animation)
@@ -29,7 +29,7 @@ func _on_player_input_interaction_just_pressed():
 	if playerOnRange == true:
 		interaction.emit(whichNpcIs)
 
-func takeTheRightNpc():
+func defineTheRightNpc():
 	for npc in NpcsInstance.npcs:
 		if selected_animation == npc.npcName:
 			return npc
