@@ -5,11 +5,17 @@
 	"givenBy": "Nobody",
 	"description": "Do nothing",
 	"objective": "Do nothing"
-  },{
+	},{
 	"id": 1,
 	"questName": "Space Cat requests",
 	"givenBy": "SpaceCat",
 	"description": "Space Cat needs 5 rocks",
 	"objective": "Bring 5 rocks to Space Cat"
+	},{
+	"id": 2,
+	"questName": "Space Cat 2nd requests",
+	"givenBy": "SpaceCat",
+	"description": "Space Cat needs 10 golds",
+	"objective": "Bring 10 golds to Space Cat"
   }]
 }

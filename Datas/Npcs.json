@@ -2,10 +2,10 @@
   "pnjs" : [{
 	"name": "nobody",
 	"img": "res://Assets/Sprites/block_error.png",
-	"questsId": 0
-  },{
+	"questsId": [0]
+	},{
 	"name": "SpaceCat",
 	"img": "res://Assets/Sprites/Characters/space_cat_minia.png",
-	"questsId": 1
+	"questsId": [1,2]
   }]
 }
