@@ -2,10 +2,10 @@
   "pnjs" : [{
 	"name": "nobody",
 	"img": "res://Assets/Sprites/block_error.png",
-	"dialogues": "ERROR : Nobody's talking with you ! "
+	"questsId": 0
   },{
 	"name": "SpaceCat",
 	"img": "res://Assets/Sprites/Characters/space_cat_minia.png",
-	"dialogues": "Hello, I'm Space Cat and I need some rocks. Can you bring me 5 please ?"
+	"questsId": 1
   }]
 }

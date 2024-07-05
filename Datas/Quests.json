@@ -1,10 +1,10 @@
 {
   "quests" : [{
 	"id": 0,
-	"questName": "Noting",
-	"givenBy": "ERROR : Nobody's talking with you ! ",
+	"questName": "Nothing",
+	"givenBy": "Nobody",
 	"description": "Do nothing",
-	"objective": "Nothing"
+	"objective": "Do nothing"
   },{
 	"id": 1,
 	"questName": "Space Cat requests",
