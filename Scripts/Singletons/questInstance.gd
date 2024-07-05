@@ -15,5 +15,5 @@ func loadQuests():
 	for key in questsData:
 		var value = questsData[key]
 		for i in value:
-			quests.append(i)
+			quests.append(Quest.new(i))
 	return quests
