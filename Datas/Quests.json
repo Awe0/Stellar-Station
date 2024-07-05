@@ -4,18 +4,21 @@
 	"questName": "Nothing",
 	"givenBy": "Nobody",
 	"description": "Do nothing",
-	"objective": "Do nothing"
+	"objective": "Do nothing",
+	"condition": []
 	},{
 	"id": 1,
 	"questName": "Space Cat requests",
 	"givenBy": "SpaceCat",
 	"description": "Space Cat needs 5 rocks",
-	"objective": "Bring 5 rocks to Space Cat"
+	"objective": "Bring 5 rocks to Space Cat",
+	"condition": []
 	},{
 	"id": 2,
 	"questName": "Space Cat 2nd requests",
 	"givenBy": "SpaceCat",
 	"description": "Space Cat needs 10 golds",
-	"objective": "Bring 10 golds to Space Cat"
+	"objective": "Bring 10 golds to Space Cat",
+	"condition": [1]
   }]
 }
